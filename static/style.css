@@ -1,0 +1,280 @@
+html, body { height: 100% }
+* { padding:0;margin:0 }
+body { font-family:"Helvetica Neue",Arial,sans-serif;font-size:13px;color:#333;position:relative }
+h1,h2,h3,h4,h5,h6,input,select,option,textarea { font-size:13px;font-family:"Helvetica Neue",Arial,sans-serif }
+ul { list-style:none }
+img { border:0 }
+a { text-decoration:none;color:#69f;outline:0 }
+a:hover { color:#4d81b3 }
+.clearfix:after { content:".";display:block;clear:both;visibility:hidden;line-height:0;height:0 }
+.clearfix { display:block }
+
+#nav {
+	background-color: #609c36;
+}
+
+#nav ul {
+	background: url('images/navBg.gif') no-repeat top right;
+	height: 45px;
+	margin-right: 30px;
+}
+
+#nav ul li {
+	font-weight: 200;
+	float: left;
+}
+
+#nav ul li a {
+	display: block;
+	line-height: 13px;
+	color: #ffffff;
+	padding: 17px 15px 15px 15px;
+}
+
+#nav ul li a:hover {
+	background: url('images/navHighlight.gif') repeat-x top left;
+}
+
+#nav ul li#logo a {
+	padding: 6px 64px 8px 38px;
+}
+
+#nav ul li#logo a:hover {
+	background: none;
+}
+
+#container {
+	margin: 0 32px;
+	width: 1025px;
+}
+
+.docHead h1 {
+	font-size: 24px;
+	font-weight: normal;
+	margin: 0 0 .5em 0;
+}
+
+
+.contents {
+	background-color: #f6f6f6;
+}
+
+.contents ul {
+	float: left;
+	width: 24%;
+	padding-top: 16px;
+	min-height: 150px;
+	border-right: 1px solid #dddddd;
+}
+
+.contents ul:last-child {
+	border-right: 0;
+}
+
+.contents ul li {
+	padding: .5em 20px;
+}
+
+.contents ul li.head {
+	font-size: 16px;
+}
+
+.contents ul li a {
+	color: #333333;
+}
+
+.contents ul li a:hover {
+	color: #4d81b3
+}
+
+.footer {
+	text-align: right;
+	padding-top: 55px;
+	color: #999999;
+}
+
+#interiorContainer .footer {
+	padding-top: 10px;
+	width: 1025px;
+}
+
+.footer sup {
+	font-size: .8em;
+}
+
+body#interior {
+	background: url('images/interiorBg.gif') repeat-y top left;
+}
+
+#interiorContainer {
+	padding: 24px 24px 24px 32px;
+}
+
+ul#index {
+	float: left;
+	width: 193px;
+	margin-right: 30px;
+	border-top: 1px solid #dddddd;
+}
+
+ul#index li {
+	background-color: #ffffff;
+	border-bottom: 1px solid #dddddd;
+}
+
+ul#index li a {
+	display: block;
+	padding: .4em;
+	color: #333333;
+}
+
+ul#index li a:hover, ul#index li.on ul li a:hover {
+	color: #4d81b3
+}
+
+ul#index li.on {
+	font-weight: bold;
+}
+
+ul#index li ul li {
+	font-size: 12px;
+	font-weight: normal;
+	border-bottom: 0;
+	padding-left: .8em;
+	border-top: 1px solid #eeeeee;
+}
+
+#content {
+	margin-left: 225px;
+	width: 800px;
+	padding-bottom: 50px;
+	border-bottom: 1px solid #dddddd;
+}
+
+#content h1 {
+	font-weight: normal;
+	font-size: 28px;
+	line-height: 28px;
+}
+
+#content h2 {
+	font-weight: normal;
+	font-size: 24px;
+	line-height: 24px;
+}
+
+#content h3 {
+	font-weight: normal;
+	font-size: 16px;
+	margin: 1em 0 .2em 0;
+}
+
+#content p {
+	margin: 1em 0;
+	line-height: 18px;
+}
+
+#content ul {
+	margin: 1em 35px;
+}
+
+#content ul li {
+	list-style-type: disc;
+	margin: 1em 0;
+	line-height: 16px;
+}
+
+#content tt {
+	font-size: .9em;
+	font-family: Monaco, 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', 'Lucida Console', monospace;
+}
+
+#content pre {
+	font-size: 11px;
+	color: #3a5c3a;
+	font-family: Monaco, 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', 'Lucida Console', monospace;
+	padding: 1em;
+	margin: 1em 0;
+	background-color: #ebf6ff;
+	border:1px solid #888;
+}
+
+#content pre.example {
+    background-color: #FAFAFB;
+}
+
+#content ul li pre {
+	margin: 1em 0;
+}
+
+
+/* check these */
+
+#middle pre {
+    background-color: #F9F9F9;
+    background-clip: padding-box;
+    color: #666;
+    border: 1px solid #C6C6C6;
+    padding: 0px 3px;
+}
+
+p code, li code {
+    background-color: #F9F9F9;
+    background-clip: padding-box;
+    -webkit-border-radius: 3px;
+    color: #666;
+    border: 1px solid #C6C6C6;
+    padding: 0px 3px;
+    display: inline-block;
+}
+
+pre code {
+    background-color:inherit;
+    border: 0px;
+}
+
+.deprecated {
+    color:#f00;
+    font-size:16px;
+    font-weight:bold;
+    font-variant:small-caps;
+}
+
+#apitoc {
+    margin-bottom:4em;
+}
+.apiendpoint {
+    margin-bottom:4em;
+}
+
+.docHead {
+  padding: 20px 0;
+  background: url('images/api_splash_blur.jpg') no-repeat;
+  height: 300px;
+  margin-top: 20px;
+}
+
+.docHead div {
+  background: rgba(255, 255, 255, .83);
+  width: 480px;
+  padding: 20px 30px 30px 20px;
+  margin-top: 30px;
+  float: right;
+}
+
+.docHead p {
+  font-size: 14px;
+  line-height: 1.5em;
+  margin-bottom: 2em;
+}
+
+a.button {
+  border-radius: 20px;
+  border: none;
+  color: white;
+  font-weight: bold;
+  font-style: italic;
+  font-size: 18px;
+  padding: 6px 20px;
+  background-color: #EE6123;
+}

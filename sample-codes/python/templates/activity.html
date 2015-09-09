@@ -1,0 +1,22 @@
+<p style="margin-bottom:20px;">
+	<ul style="list-style:none;">
+		<li><a href="/">Back to home</a></li>
+	</ul>
+</p>
+
+{% if data %}
+  <h2>sample single venture activity</h2>
+  <p>
+  	
+  	{% for d in data['activities'] %}
+    
+  	id:<i>{{ d.id }}</i><br>
+  	data:<i>{{ d.date }}</i><br>
+  	content:<i>{{ d.content }}</i><br>
+  	<br><br>
+  	{% endfor %}
+  	
+  </p>
+{% else %}
+  <h1>Not venture activity was found </h1>
+{% endif %}

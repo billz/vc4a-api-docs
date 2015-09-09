@@ -1,0 +1,27 @@
+<p style="margin-bottom:20px;">
+	<ul style="list-style:none;">
+		<li><a href="/">Back to home</a></li>
+	</ul>
+</p>
+
+{% if data %}
+  <h2>List of sample ventures!</h2>
+  <p>
+  	
+  	{% for d in data['ventures'] %}
+    
+  	title:<i>{{ d.title }}</i><br>
+  	country:<i>{{ d.country }}</i><br>
+  	latitude:<i>{{ d.latitude }}</i><br>
+  	longitude:<i>{{ d.longitude }}</i><br>
+  	pitch:<i>{{ d.pitch }}</i><br>
+  	<br><br>
+  	{% endfor %}
+  	
+  </p>
+{% else %}
+  <h1>Not venture was found </h1>
+{% endif %}
+
+
+
