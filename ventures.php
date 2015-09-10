@@ -54,7 +54,9 @@ Default record offset and limits apply.</p>
 <h3>Return Values</h3>
 <ul>
 <li>id - the unique identifier for the venture.</li>
+<li>ownerid - the unique identifier for the venture owner.</li>
 <li>title - the corresponding name for the venture.</li>
+<li>date_created - the date/time the venture was created.</li>
 <li>pitch - the corresponding pitch for the venture.</li>
 <li>country - the primary country where the venture is based.</li>
 <li>latitude - the north-south distance from the equator, expressed in degrees and minutes.</li>
@@ -69,35 +71,45 @@ GET /v1/ventures?offset=0&limit=5</pre>
 {
     "ventures": [{
         "id": "9",
+        "ownerid": "13",
         "title": "Miniature Vancouver",
+        "date_created": "2015-04-15 10:51:26",
         "pitch": "Vivamus ac lorem metus. Sed eu sapien risus, sed vehicula nulla.",
         "country": "Ethiopia",
         "latitude": "4.287556427760489",
         "longitude": "10.689018062500054"
     }, {
         "id": "12",
+        "ownerid": "22",
         "title": "Panda Whale",
+        "date_created": "2015-04-14 11:31:53",
         "pitch": "We are a consumer Internet service for organizing and sharing great content.",
         "country": "Zambia",
         "latitude": "-13.667338259654947",
         "longitude": "28.6962890625"
     }, {
         "id": "13",
+        "ownerid": "19",
         "title": "Mino Monsters",
+        "date_created": "2015-04-13 10:25:49",
         "pitch": "Discover which of your friends are voters and campaign with them to elect Pokemon.",
         "country": "Cameroon",
         "latitude": "5.2509943447956795",
         "longitude": "12.007377437500054"
     }, {
         "id": "16",
+        "ownerid": "44",
         "title": "Anvil Studio",
+        "date_created": "2015-04-12 15:43:03",
         "pitch": "Maker of the finest widgets to simplify your modern life.",
         "country": "Cameroon",
         "latitude": "4.199906782278597",
         "longitude": "11.216361812500054"
     }, {
         "id": "18",
+        "ownerid": "30",
         "title": "Space Tourism",
+        "date_created": "2015-04-12 09:07:29",
         "pitch": "We launch people into space. 'Nuff said.",
         "country": "Cape Verde",
         "latitude": "15.210222837556922",
@@ -129,18 +141,38 @@ GET /v1/ventures?offset=0&limit=5</pre>
 </ul>
 <h3>Return Values</h3>
 <ul>
-<li>id - the unique vc4a identifier for the venture.</li>
-<li>owner - the unique identifier for the venture owner.</li>
+<li>id - the unique identifier for the venture.</li>
+<li>ownerid - the unique identifier for the venture owner.</li>
 <li>title - the corresponding title for the venture.</li>
-<li>pitch - the corresponding pitch for the venture.</li>
-<li>sector - the primary sector the ventures is engaged in.</li>
-<li>tags - a comma-delimted list of tags associated with the venture.</li>
+<li>pitch - the corresponding textual pitch for the venture.</li>
+<li>pitch_type - a string value corresponding to the type of pitch (elevator, longer, complex).</li>
+<li>risky - a boolean value; high-risk venture that offers potentially high-rewards.</li>
+<li>nda - a boolean value; venture owner requires NDA before sharing business plan.</li>
+<li>ambitious - a boolean value; founder has the business savvy and persistence.</li>
+<li>network - a boolean value; venture team is able to get introduced to the right people.</li>
+<li>build - a string value corresponding to how the product/service is built (internal or external).</li>
+<li>team - the summary text describing the venture team members.</li>
+<li>state - a string value corresponding to the current state of the venture (none, prototype, working).</li>
+<li>ip - a boolean value; venture team owns the intellectual property for the product.</li>
+<li>oss - a boolean value; the product/service is based on open source technology.</li>
+<li>product - the summary text corresponding to the product description.</li>
+<li>community - a boolean value; plan to start by building a community of passionate customers.</li>
+<li>advertising  - a boolean value; have identified one or more revenue streams.</li>
+<li>prognosis - a boolean value; have a cash-flow prognosis.</li>
+<li>revenue - a string value corresponding to the basic revenue plan (soon or now).</li>
+<li>revenue_plan - the summary text corresponding to the revenue plan text.</li>
+<li>notes - supplementary notes as added by the VC4A team.</li>
+<li>quickscan_last_updated - date/time stamp corresponding to the last time the QuickScan was updated.</li>
+<li>address - the cooresponding street address where the venture is based.</li>
+<li>sectors - an array of sectors the venture is engaged in.</li>
+<li>interest_regions - an array of regions the ventures is focused on.</li>
+<li>interest_countries - an array of countries the ventures is focused on.</li>
+<li>tags - an array of tags associated with the venture.</li>
 <li>fundStatus - the current fundraising status of the venture.</li>
 <li>country - the primary country where the venture is based.</li>
 <li>latitude - the north-south distance from the equator, expressed in degrees and minutes.</li>
 <li>longitude - the east-west distance from the meridian, expressed in degrees and minutes.</li>
 <li>followers - an array of unique identifiers for the users who are following the venture.</li>
-
 </ul>
 <h3>Example Request</h3>
 <pre class="example">API Address: https://api.vc4africa.biz
@@ -149,11 +181,48 @@ GET /v1/ventures/18</pre>
 <h3>Example Response</h3>
 <pre class="prettyprint lang-js">{
     "id": "18",
-    "owner": "1",
+    "ownerid": "30",
     "title": "Space Tourism",
     "pitch": "We launch people into space. 'Nuff said.",
-    "sector": "tourism",
-    "tags": "space,rockets,zero-g",
+    "pitch_type: "elevator",
+    "risky": true,
+    "nda": false,
+    "ambitious": true,
+    "network": true,
+    "build": "internal",
+    "team": "We're a bunch of rocket scientists.",
+    "state": "working",
+    "ip": true,
+    "oss": false,
+    "product": "We have developed a medium-lift rocket and a crew capsule.",
+    "community": true,
+    "advertising": true,
+    "prognosis": true,
+    "revenue": "now",
+    "revenue_plan": "We are a profit-making business in a niche market.",
+    "notes": null,
+    "quickscan_last_updated": "2015-03-10 05:51:47",
+    "address": null,
+    "sectors": [{
+        "Aerospace",
+        "Engineering",
+        "Manufacturing",
+    }],
+    "interest_regions": [{
+        "East Africa",
+        "Southern Africa",
+        "West Africa"
+    }],
+    "interest_countries": [{
+        "Kenya",
+        "Botswana",
+        "Ghana"
+    }],
+    "tags": [{
+        "space",
+        "rockets",
+        "awesome"
+    }],
     "fundStatus": "Seeking Investor",
     "country": "Cape Verde",
     "latitude": "15.210222837556922",
