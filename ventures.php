@@ -30,6 +30,7 @@
 <li><a href="#v1_ventures_activity">/v1/ventures/:venture_id/activity</a></li>
 <li><a href="#v1_ventures_team">/v1/ventures/:venture_id/team</a></li>
 <li><a href="#v1_ventures_search">/v1/ventures/search</a></li>
+<li><a href="#v1_ventures_countries">/v1/ventures/countries</a></li>
 </ul></div>
 
 <div class="apiendpoint" id="v1_ventures">
@@ -58,13 +59,15 @@ Default record offset and limits apply.</p>
 <li>title - the corresponding name for the venture.</li>
 <li>date_created - the date/time the venture was created.</li>
 <li>pitch - the corresponding pitch for the venture.</li>
+<li>network strength - a decimal value corresponding to the calculated signal strength of the venture.</li>
+<li>shorturl - the short URL which redirects to the full URI of the venture.</li>
 <li>country - the primary country where the venture is based.</li>
 <li>latitude - the north-south distance from the equator, expressed in degrees and minutes.</li>
 <li>longitude - the east-west distance from the meridian, expressed in degrees and minutes.</li>
 </ul>
 <h3>Example Request</h3>
 <pre class="example">API Address: https://api.vc4africa.biz
-GET /v1/ventures?offset=0&limit=5</pre>
+GET /v1/ventures.json?offset=0&limit=5</pre>
 
 <h3>Example Response</h3>
 <pre class="prettyprint lang-js">
@@ -75,6 +78,8 @@ GET /v1/ventures?offset=0&limit=5</pre>
         "title": "Miniature Vancouver",
         "date_created": "2015-04-15 10:51:26",
         "pitch": "Vivamus ac lorem metus. Sed eu sapien risus, sed vehicula nulla.",
+        "network_strength": "0.24",
+        "shorturl": "http://vc4afri.ca/cl8j4",
         "country": "Ethiopia",
         "latitude": "4.287556427760489",
         "longitude": "10.689018062500054"
@@ -84,7 +89,9 @@ GET /v1/ventures?offset=0&limit=5</pre>
         "title": "Panda Whale",
         "date_created": "2015-04-14 11:31:53",
         "pitch": "We are a consumer Internet service for organizing and sharing great content.",
-        "country": "Zambia",
+        "network_strength": "0.61",
+        "shorturl": "http://vc4afri.ca/7cqso",
+        "country": "Nigeria",
         "latitude": "-13.667338259654947",
         "longitude": "28.6962890625"
     }, {
@@ -93,6 +100,8 @@ GET /v1/ventures?offset=0&limit=5</pre>
         "title": "Mino Monsters",
         "date_created": "2015-04-13 10:25:49",
         "pitch": "Discover which of your friends are voters and campaign with them to elect Pokemon.",
+        "network_strength": "0.83",
+        "shorturl": "http://vc4afri.ca/ogrgq",
         "country": "Cameroon",
         "latitude": "5.2509943447956795",
         "longitude": "12.007377437500054"
@@ -102,7 +111,9 @@ GET /v1/ventures?offset=0&limit=5</pre>
         "title": "Anvil Studio",
         "date_created": "2015-04-12 15:43:03",
         "pitch": "Maker of the finest widgets to simplify your modern life.",
-        "country": "Cameroon",
+        "network_strength": "0.55",
+        "shorturl": "http://vc4afri.ca/7xxmk",
+        "country": "Kenya",
         "latitude": "4.199906782278597",
         "longitude": "11.216361812500054"
     }, {
@@ -111,6 +122,8 @@ GET /v1/ventures?offset=0&limit=5</pre>
         "title": "Space Tourism",
         "date_created": "2015-04-12 09:07:29",
         "pitch": "We launch people into space. 'Nuff said.",
+        "network_strength": "0.91",
+        "shorturl": "http://vc4afri.ca/jdq55",
         "country": "Cape Verde",
         "latitude": "15.210222837556922",
         "longitude": "-23.88184306249991"
@@ -176,7 +189,7 @@ GET /v1/ventures?offset=0&limit=5</pre>
 </ul>
 <h3>Example Request</h3>
 <pre class="example">API Address: https://api.vc4africa.biz
-GET /v1/ventures/18</pre>
+GET /v1/ventures/18.json</pre>
 
 <h3>Example Response</h3>
 <pre class="prettyprint lang-js">{
@@ -228,7 +241,7 @@ GET /v1/ventures/18</pre>
     "latitude": "15.210222837556922",
     "longitude": "-23.88184306249991",
     "followers": [{
-        "follower_id": "1"
+        "userid": "1"
     }]
 },
   &quot;status_code&quot;: 200,
@@ -253,25 +266,28 @@ GET /v1/ventures/18</pre>
 <ul>
 <li>id - the unique vc4a identifier for the venture activity item.</li>
 <li>date - a <code>timestamp</code> representing the time at which the activity was created.</li>
-<li>content - the content of the activity update for the venture.</li>
+<li>action - the recorded action of the activity item, including a URI to the profile of the actor.</li>
+<li>content - (optional) the textual content of the activity update for the venture.</li>
 <li>metadata - <code>offset</code>, <code>limit</code> and <code>totalCount</code>.</li>
 </ul>
 </li>
 </ul>
 <h3>Example Request:</h3>
 <pre class="example">API Address: https://api.vc4africa.biz
-GET /v1/ventures/18/activity</pre>
+GET /v1/ventures/18/activity.json</pre>
 
 <h3>Example Response:</h3>
 <pre class="prettyprint lang-js">{
     "venture_activity": [{
         "id": "150596",
         "date": "2012-09-05 15:32:23",
-        "content": "We have just welcomed our 50,000th user."
+        "action": "<a href="https://vc4africa.biz/members/paul/" title="Paul">Paul</a> created the venture <a href="">GreenGlow Stoves</a>.",
+        "content": ""
     }, {
         "id": "150623",
         "date": "2012-10-04 09:06:55",
-        "content": "Pikachu for president."
+        "action": "<a href="https://vc4africa.biz/members/alice/" title="Alice">Alice</a> posted an update in the venture <a href="">GreenGlow Stoves</a>",
+        "content": "Great things happening here!"
     }],
     "_metadata": [{
         "offset": "0",
@@ -301,25 +317,25 @@ GET /v1/ventures/18/activity</pre>
 
 <h3>Example Request:</h3>
 <pre class="example">API Address: https://api.vc4africa.biz
-GET /v1/ventures/18/team</pre>
+GET /v1/ventures/18/team.json</pre>
 
 <h3>Return Values</h3>
 <ul>
-<li>user_id: a unique identifier corresponding to the team member.</li>
+<li>team_members: an array of unique identifiers corresponding to the team members.</li>
 <li>metadata - <code>offset</code>, <code>limit</code> and <code>totalCount</code>.</li>
 </ul>
 <h3>Example Response:</h3>
 <pre class="prettyprint lang-js">{
-    "team_members_id": [{
-        "user_id": "1580",
-        "user_id": "1210",
-        "user_id": "930",
-        "user_id": "9107"
+    "team_members": [{
+        "userid": "1580",
+        "userid": "1210",
+        "userid": "930",
+        "userid": "9107"
     }],
     "_metadata": [{
         "offset": "0",
         "limit": "20",
-        "totalCount": 1
+        "totalCount": 4
     }]
 }</pre>
 </div>
@@ -362,7 +378,7 @@ GET /v1/ventures/18/team</pre>
 
 <h3>Example Request:</h3>
 <pre class="example">API Address: https://api.vc4africa.biz
-GET /v1/ventures/search?country=Ethiopia&status=r_fundraising</pre>
+GET /v1/ventures/search.json?country=Ethiopia&status=r_fundraising</pre>
 
 <h3>Example Response:</h3>
 <pre class="prettyprint lang-js">{
@@ -378,17 +394,17 @@ GET /v1/ventures/search?country=Ethiopia&status=r_fundraising</pre>
         "latitude": "4.287556427760489",
         "longitude": "10.689018062500054",
         "followers": [{
-            "follower_id": "60"
+            "userid": "60"
         }, {
-            "follower_id": "25"
+            "userid": "25"
         }, {
-            "follower_id": "1"
+            "userid": "1"
         }, {
-            "follower_id": "14"
+            "userid": "14"
         }, {
-            "follower_id": "71"
+            "userid": "71"
         }, {
-            "follower_id": "36"
+            "userid": "36"
         }]
     }],
     "_metadata": [{
@@ -398,7 +414,59 @@ GET /v1/ventures/search?country=Ethiopia&status=r_fundraising</pre>
     }]
 }</pre>
 </div>
+
+<div class="apiendpoint" id="v1_ventures_countries">
+
+<h2>/v1/ventures/countries</h2>
+<p>Returns an array of base countries.</p>
+<h3>Parameters</h3>
+<ul>
+<li>None.</li>
+    
+</ul>
+<p><strong>Note</strong></p>
+<ul>
+<li>These values are useful as parameters for searching ventures by country. Refer to <a href="#v1_ventures_search">/v1/ventures/search</a>.</li>
+</ul>
+
+<h3>Return Values</h3>
+<ul>
+<li>countries - an array of string values corresponding to venture base countries, in alpha ascending order.</li>
+<li>metadata - <code>totalCount</code>.</li>
+</ul>
+
+<h3>Example Request:</h3>
+<pre class="example">API Address: https://api.vc4africa.biz
+GET /v1/ventures/countries.json</pre>
+
+<h3>Example Response:</h3>
+<pre class="prettyprint lang-js">{
+    "countries": [{
+        "Algeria",
+        "Angola",
+        "Benin",
+        "Botswana",
+        "Burkina Faso",
+        "Burundi",
+        "Cameroon",
+        "Cape Verde",
+        "Central African Rep",
+        "Chad",
+        "Congo",
+        "Dem. Rep. Congo",
+        "Djibouti",
+        "Egypt",
+        "Ethiopia",
+        ...
+        }]
+    }],
+    "_metadata": [{
+        "totalCount": 47
+    }]
+}</pre>
 </div>
+</div>
+
 
 <?php include( 'footer.php' ); ?> 
     
