@@ -2,23 +2,7 @@
 
 <div id="interiorContainer" class="clearfix">
 
-<ul id="index">
-
-<li><a href="get_started.php">Getting Started</a></li>
-    <li class="on"><a href="api.php">API Documentation</a>
-        <ul>
-            <li><a href="authentication.php">Authentication</a></li>
-            <li><a href="formats.php">Request / Response Formats</a></li>
-            <li><a href="rate_limiting.php">Rate Limiting</a></li>
-            <li><a href="badges.php">Badges</a></li>
-            <li><a href="users.php">Users</a></li>
-            <li class="on"><a href="ventures.php">Ventures</a></li>
-        </ul>
-    </li>
-    <li><a href="best_practices.php">Best Practices</a></li>
-    <li><a href="changelog.php">Revision History</a></li>
-
-</ul>
+<?php include( 'api_toc.php' ); ?>
 
 <div id="content">
 
@@ -357,7 +341,7 @@ GET /v1/ventures/18/team.json</pre>
 <p><strong>Note</strong></p>
 <ul>
 <li>at least one of the above parameters is required, otherwise a 400 Error: 'Missing required parameters' will be returned.</li>
-<li>the <code>status</code> parameter accepts one of the following fundraising status values: <code>r_fundraising</code>, <code>r_dealmaking</code> or <code>r_pending</code>.</li>
+<li>the <code>status</code> parameter accepts one of the following fundraising status values: <code>r_fundraising</code>, <code>r_dealmaking</code>, <code>r_completed</code>, <code>r_pending</code> or <code>r_closed</code>.</li>
 </ul>
 
 <h3>Return Values</h3>
