@@ -16,6 +16,7 @@
 <h2>Revision History</h2>
 <ul>
 <li>2012-Dec-10 &mdash; Initial v1 documentation</li>
+<li>2015-Sept-17 &mdash; Updated with new venture routes and extended public data</li>
 </ul>
 </div>
 
