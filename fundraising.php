@@ -11,15 +11,13 @@
 <div id="apitoc"><ul>
 <li><a href="#v1_fundraising_info">/v1/fundraising</a></li>
 <li><a href="#v1_fundraising_search">/v1/fundraising/search</a></li>
-<li><a href="#v1_fundraising_ventures_id">/v1/fundraising/:venture_id</a></li>
+<!--li><a href="#v1_fundraising_ventures_id">/v1/fundraising/:venture_id</a></li-->
 </ul></div>
 
-<div class="apiendpoint" id="v1_user_info">
+<div class="apiendpoint" id="v1_fundraising_info">
 
 <h2>/v1/fundraising</h2>
-<p>Returns an array of compact user objects, according to default
-    record offset and limit. (OAuth and user authorization
-    required).</p>
+<p>Returns an array of compact user objects, according to default record offset and limit.</p>
 <h3>Parameters</h3>
 <ul>
 <li>
@@ -38,6 +36,7 @@
 <li>the <code>status</code> parameter accepts one of the following fundraising status values: <code>r_fundraising</code>, <code>r_dealmaking</code>, <code>r_completed</code>, <code>r_pending</code>, or <code>r_closed</code>.</li>
 <li><code>limit</code> is optional (defaults to 20).</li>
 <li><code>offset</code> is optional (defaults to 0).</li>
+<li>VC4A API key authorization required.</li>
 </ul>
 <h3>Return Values</h3>
 <ul>
@@ -50,46 +49,46 @@
 </ul>
 <h3>Example Request</h3>
 <pre class="example">API Address: https://api.vc4africa.biz
-GET /v1/fundraising.json?status=r_moderated</pre>
+GET /v1/fundraising.json?status=r_fundraising&limit=5</pre>
 
 <h3>Example Response</h3>
 <pre class="prettyprint lang-js">
 {
-    "users": [{
-        "id": "1580",
-        "userLogin": "nelsonkana",
-        "firstName": "Nelson",
-        "lastName": "Kana",
-        "displayName": "Nelson Kana",
-        "lastActive": "2012-09-19 13:59:27"
+    "fundraising": [{
+        "id": "41209",
+        "post_date": "2015-04-20 12:48:07",
+        "title": "Pareto Biotechnologies - funding round",
+        "fundStatus": "Raising Capital",
+        "venture_id": "40578",
+        "capital": "10000000"
     }, {
-        "id": "7573",
-        "userLogin": "davidvandijk",
-        "firstName": "David",
-        "lastName": "van Dijk",
-        "displayName": "David van Dijk",
-        "lastActive": "2012-07-24 08:00:32"
+        "id": "40210",
+        "post_date": "2015-04-20 11:58:50",
+        "title": "Stayful Booking - funding round",
+        "fundStatus": "Raising Capital",
+        "venture_id": "40753",
+        "capital": "125000"
     }, {
-        "id": "1156",
-        "userLogin": "benwhite",
-        "firstName": "Ben",
-        "lastName": "White",
-        "displayName": "Ben White",
-        "lastActive": "2012-10-09 10:05:53"
+        "id": "41651",
+        "post_date": "2015-04-15 15:44:35",
+        "title": "Remit2Kenya - funding round",
+        "fundStatus": "Raising Capital",
+        "venture_id": "39517",
+        "capital": "75000"
     }, {
-        "id": "9155",
-        "userLogin": "ebottabi",
-        "firstName": "Ebot",
-        "lastName": "Tabi",
-        "displayName": "Ebot Tabi",
-        "lastActive": "2012-07-24 08:01:17"
+        "id": "41324",
+        "post_date": "2015-04-15 14:57:53",
+        "title": "SaferMotos - funding round",
+        "fundStatus": "Raising Capital",
+        "venture_id": "38691",
+        "capital": "500000"
     }, {
-        "id": "121",
-        "userLogin": "billzimmerman",
-        "firstName": "Bill",
-        "lastName": "Zimmerman",
-        "displayName": "Bill Zimmerman",
-        "lastActive": "2012-03-27 13:02:26"
+        "id": "41046",
+        "post_date": "2015-04-09 21:14:39",
+        "title": "SokoConnect - funding round",
+        "fundStatus": "Raising Capital",
+        "venture_id": "40416",
+        "capital": "250000"
     }],
     "_metadata": [{
         "offset": "0",
@@ -104,469 +103,111 @@ GET /v1/fundraising.json?status=r_moderated</pre>
 
 </div>
 
-<div class="apiendpoint" id="v1_user_id">
+<div class="apiendpoint" id="v1_fundraising_search">
 
-<h2>/v1/users/:user_id</h2>
-<p>Returns extended profile information for a given user and associated metadata.</p>
+<h2>/v1/fundraising/search</h2>
+<p>Queries fundraising rounds by name, country, sector, tag, fundraising status or ID. Returns an array of compact venture objects with associated financial details.</p>
 <h3>Parameters</h3>
 <ul>
-<li>
-<p>user_id -  the unique vc4a identifier for the user.</p>
-</li>
+<li>name - the corresponding name of the fundraising round.</li>
+<li>country - the country associated with the fundraising round.</li>
+<li>sector - the primary sector associated with the fundraising round.</li>
+<li>tag - a tags associated with the fundraising round.</li>
+<li>status - the type of fundraising round.</li>
 </ul>
 <p><strong>Note</strong></p>
 <ul>
-<li><code>user_id</code> is a required parameter.</li>
+<li><code>status</code> is a required parameter.</li>
+<li>VC4A API key authorization required.</li>
 </ul>
 <h3>Return Values</h3>
 <ul>
-<li>id - the unique vc4a identifier for the user.</li>
-<li>firstName - the corresponding first name for the user.</li>
-<li>lastName - the corresponding last name for the user.</li>
-<li>displayName - the display name chosen by the user (defaults to first/last name).</li>
-<li>lastActive - a <code>timestamp</code> representing the user's last activity.</li>
-<li>title - the corresponding title for the user.</li>
-<li>organization - the corresponding organization for the user.</li>
-<li>city - the city where the user is located.</li>
-<li>country - the country where the user is located.</li>
-</ul>
-<h3>Example Request</h3>
-<pre class="example">API Address: https://api.vc4africa.biz
-GET /v1/users/1580</pre>
-
-<h3>Example Response</h3>
-<pre class="prettyprint lang-js">
-{
-    "user": [{
-        "id": "1580",
-        "firstName": "Nelson",
-        "lastName": "Kana",
-        "lastActive": "2012-09-19 13:59:27",
-        "title": "Head of Ecosystem",
-        "organization": "Zinger Systems",
-        "city": "Buea",
-        "country": "Cameroon"
-    }]
-},
-  &quot;status_code&quot;: 200,
-  &quot;status_txt&quot;: &quot;OK&quot;
-}
-</pre>
-
-</div>
-
-
-<div class="apiendpoint" id="v1_user_badges">
-
-<h2>/v1/users/:user_id/badges</h2>
-<p>Returns a compact array of badges unlocked by a given user.</p>
-<h3>Parameters</h3>
-<ul>
-<li>
-<p>user_id -  the unique vc4a identifier for the user.</p>
-</li>
-</ul>
-<p><strong>Note</strong></p>
-<ul>
-<li><code>user_id</code> is a required parameter.</li>
-</ul>
-<h3>Return Values</h3>
-<ul>
-<li>id - the unique vc4a identifier for the badge.</li>
-<li>actionCount - the number of action counts recorded for the given badge.</li>
-<li>name - the corresponding name for the badge.</li>
-<li>description - the corresponding description for the badge.</li>
-<li>slug - a URL friendly version of the resource name.</li>
-<li>unlockedAt - a <code>timestamp</code> representing the time at which the badge was unlocked.</li>
-<li>metadata - <code>offset</code>, <code>limit</code> and <code>totalCount</code>.</li>
-</ul>
-<h3>Example Request</h3>
-<pre class="example">API Address: https://api.vc4africa.biz
-GET /v1/users/1/badges</pre>
-
-<h3>Example Response</h3>
-<pre class="prettyprint lang-js">
-{
-    "badges": [{
-        "id": "3",
-        "actionCount": "1",
-        "name": "Green Entrepreneur",
-        "description": "You posted a green venture.",
-        "slug": "green-entrepreneur",
-        "unlockedAt": "2012-07-23 15:27:15"
-    }, {
-        "id": "1",
-        "actionCount": "1",
-        "name": "Crowd Favorite",
-        "description": "Your venture was voted to the rop in 30 days ranking.",
-        "slug": "crowd-favorite",
-        "unlockedAt": "2012-07-23 15:29:52"
-    }, {
-        "id": "10",
-        "actionCount": "1",
-        "name": "DEMO-Africa Judge",
-        "description": "You are a judge for DEMO-Africa",
-        "slug": "demo-judge",
-        "unlockedAt": "2012-09-08 10:42:32"
-    }],
-    "_metadata": {
-        "offset": "0",
-        "limit": "20",
-        "totalCount": 3
-    }
-},
-  &quot;status_code&quot;: 200,
-  &quot;status_txt&quot;: &quot;OK&quot;
-}
-</pre>
-
-</div>
-
-<div class="apiendpoint" id="v1_user_ventures">
-
-<h2>/v1/users/:user_id/ventures</h2>
-<p>Returns a compact array of ventures for a given user.</p>
-<h3>Parameters</h3>
-<ul>
-<li>
-<p>user_id -  the unique vc4a identifier for the user.</p>
-</li>
-</ul>
-<p><strong>Note</strong></p>
-<ul>
-<li><code>user_id</code> is a required parameter.</li>
-</ul>
-<h3>Return Values</h3>
-<ul>
-<li>id - the unique vc4a identifier for the venture.</li>
-<li>name - the corresponding name of the venture.</li>
-<li>sectors - the primary sector(s) the ventures is engaged in.</li>
-<li>tags - a comma-delimited list of tags for the venture.</li>
-<li>fundStatus - the corresponding fundraising status for the venture.</li>
+<li>id - the unique vc4a identifier for the fundraising venture.</li>
+<li>ownerid - the unique identifier for the fundraising round owner.</li>
+<li>title - the corresponding title for the venture.</li>
+<li>pitch - the summary pitch for the venture.</li>
+<li>capital - the amount of capital in USD for the round.</li>
+<li>network_strength - a decimal value corresponding to the calculated signal strength of the venture.</li>
+<li>shorturl - the corresponding short URL which redirects to the full URI of the venture.</li>
 <li>country - the primary country where the venture is based.</li>
 <li>latitude - the north-south distance from the equator, expressed in degrees and minutes.</li>
 <li>longitude - the east-west distance from the meridian, expressed in degrees and minutes.</li>
+<li>metadata - <code>offset</code>, <code>limit</code> and <code>totalCount</code>.</li>
+</ul>
 </ul>
 <h3>Example Request</h3>
 <pre class="example">API Address: https://api.vc4africa.biz
-GET /v1/users/1/ventures</pre>
+GET /v1/fundraising/search.json?status=r_completed&limit=5</pre>
 
 <h3>Example Response</h3>
 <pre class="prettyprint lang-js">
-[{
-    "user": {
-        "id": "9",
-        "name": "Miniature Vancouver",
-        "sectors": "Electronics,Leisure",
-        "tags": "video,documentary,entertainment,cities",
-        "fundStatus": "Raising Capital",
-        "country": "Ethiopia",
+{
+    "fundraising": [{
+        "id": "40572",
+        "ownerid": "21615",
+        "title": "SaharaBranded",
+        "date_created": "2015-03-11 14:22:54",
+        "pitch": "Review, select and buy a wide variety of artisanal crafts made in the Sahara.",
+        "capital": "20000",
+        "network_strength": "0.94",
+        "shorturl": "http://vc4afri.ca/cl1j4",
+        "country": "Mali",
         "latitude": "4.287556427760489",
         "longitude": "10.689018062500054"
-    }
-}, {
-    "user": {
-        "id": "16",
-        "name": "Anvil Studio",
-        "sectors": "Consumer,Manufacturing",
-        "tags": "widgets",
-        "fundStatus": "Round Pending",
+    }, {
+        "id": "36030",
+        "ownerid": "16521",
+        "title": "OrinokoPay",
+        "date_created": "2015-11-26 18:39:09",
+        "pitch": "Reliable mobile card payment services that work anywhere.",
+        "capital": "450000",
+        "network_strength": "0.81",
+        "shorturl": "http://vc4afri.ca/5cqso",
+        "country": "Nigeria",
+        "latitude": "-13.667338259654947",
+        "longitude": "28.6962890625"
+    }, {
+        "id": "35182",
+        "ownerid": "6778",
+        "title": "Democratize",
+        "date_created": "2015-04-13 10:25:49",
+        "pitch": "Discover which of your friends are voters and campaign with them.",
+        "capital": "600000",
+        "network_strength": "0.83",
+        "shorturl": "http://vc4afri.ca/oergq",
         "country": "Cameroon",
+        "latitude": "5.2509943447956795",
+        "longitude": "12.007377437500054"
+    }, {
+        "id": "35924",
+        "ownerid": "15911",
+        "title": "Sustainable Energy",
+        "date_created": "2015-7-12 15:43:03",
+        "pitch": "We aim to end kerosene consumption in Africa. Our patented ethanol gel stoves are safe and clean.",
+        "capital": "250000",
+        "network_strength": "0.91",
+        "shorturl": "http://vc4afri.ca/7gxmk",
+        "country": "Kenya",
         "latitude": "4.199906782278597",
         "longitude": "11.216361812500054"
-    }
-}, {
-    "user": {
-        "id": "18",
-        "name": "Space Tourism",
-        "sectors": "Tourism",
-        "tags": "space,rockets,zero-g",
-        "fundStatus": "Seeking Investor",
+    }, {
+        "id": "35761",
+        "ownerid": "22798",
+        "title": "StudentPrep",
+        "date_created": "2015-09-08 21:52:40",
+        "pitch": "An e-learning platform that helps students succeed in school.",
+        "capital": "75000",
+        "network_strength": "0.72",
+        "shorturl": "http://vc4afri.ca/5dqg5",
         "country": "Cape Verde",
         "latitude": "15.210222837556922",
         "longitude": "-23.88184306249991"
-    }
-}],
-  &quot;status_code&quot;: 200,
-  &quot;status_txt&quot;: &quot;OK&quot;
-}
-</pre>
-
-</div>
-
-<div class="apiendpoint" id="v1_user_followers">
-
-<h2>/v1/users/:user_id/followers</h2>
-<p>Returns an array of compact user objects representing the followers of a given user.</p>
-<h3>Parameters</h3>
-<ul>
-<li>
-<p>user_id -  the unique vc4a identifier for the user.</p>
-</li>
-</ul>
-<p><strong>Note</strong></p>
-<ul>
-<li><code>user_id</code> is a required parameter.</li>
-</ul>
-<h3>Return Values</h3>
-<ul>
-<li>id - the unique vc4a identifier for the follower.</li>
-<li>metadata - <code>offset</code>, <code>limit</code> and <code>totalCount</code>.</li>
-</ul>
-<h3>Example Request</h3>
-<pre class="example">API Address: https://api.vc4africa.biz
-GET /v1/users/1/followers</pre>
-
-<h3>Example Response</h3>
-<pre class="prettyprint lang-js">
-{
-    "followers": [{
-        "id": "14"
-    }, {
-        "id": "17"
-    }, {
-        "id": "24"
-    }, {
-        "id": "24"
-    }, {
-        "id": "25"
-    }, {
-        "id": "32"
-    }, {
-        "id": "37"
-    }, {
-        "id": "47"
-    }, {
-        "id": "48"
-    }, {
-        "id": "51"
-    }, {
-        "id": "104"
-    }],
-    "_metadata": [{
-        "offset": "0",
-        "limit": "20",
-        "totalCount": 11
     }]
 },
   &quot;status_code&quot;: 200,
   &quot;status_txt&quot;: &quot;OK&quot;
 }
 </pre>
-
-</div>
-
-<div class="apiendpoint" id="v1_user_following">
-
-<h2>/v1/users/:user_id/following</h2>
-<p>Returns an array of compact user objects representing the users followed by a given user.</p>
-<h3>Parameters</h3>
-<ul>
-<li>
-<p>user_id -  the unique vc4a identifier for the user.</p>
-</li>
-</ul>
-<p><strong>Note</strong></p>
-<ul>
-<li><code>user_id</code> is a required parameter.</li>
-</ul>
-<h3>Return Values</h3>
-<ul>
-<li>id - the unique vc4a identifier for the user being followed.</li>
-<li>metadata - <code>offset</code>, <code>limit</code> and <code>totalCount</code>.</li>
-</ul>
-<h3>Example Request</h3>
-<pre class="example">API Address: https://api.vc4africa.biz
-GET /v1/users/1/following</pre>
-
-<h3>Example Response</h3>
-<pre class="prettyprint lang-js">
-{
-    "following": [{
-        "id": "6"
-    }, {
-        "id": "76"
-    }, {
-        "id": "74"
-    }, {
-        "id": "43"
-    }, {
-        "id": "42"
-    }, {
-        "id": "59"
-    }, {
-        "id": "102"
-    }, {
-        "id": "17"
-    }, {
-        "id": "14"
-    }, {
-        "id": "34"
-    }],
-    "_metadata": [{
-        "offset": "0",
-        "limit": "20",
-        "totalCount": 10
-    }]
-},
-  &quot;status_code&quot;: 200,
-  &quot;status_txt&quot;: &quot;OK&quot;
-}
-</pre>
-
-</div>
-
-<div class="apiendpoint" id="v1_user_activity">
-
-<h2>/v1/users/:user_id/activity</h2>
-<p>Returns an array of activity items for a given user.</p>
-<h3>Parameters</h3>
-<ul>
-<li>
-<p>user_id -  the unique vc4a identifier for the user.</p>
-</li>
-</ul>
-<p><strong>Note</strong></p>
-<ul>
-<li><code>user_id</code> is a required parameter.</li>
-</ul>
-<h3>Return Values</h3>
-<ul>
-<li>id - the unique vc4a identifier for the activity item.</li>
-<li>component - the name of the component for the activity item.</li>
-<li>type - the corresponding type for the activity item.</li>
-<li>action - the corresponding action for the activity item.</li>
-<li>content - the content of the activity item.</li>
-<li>dateRecorded - a <code>timestamp</code> representing the time at which the activity item was recorded.</li>
-<li>metadata - <code>offset</code>, <code>limit</code> and <code>totalCount</code>.</li>
-</ul>
-<h3>Example Request</h3>
-<pre class="example">API Address: https://api.vc4africa.biz
-GET /v1/users/1/activity?limit=3</pre>
-
-<h3>Example Response</h3>
-<pre class="prettyprint lang-js">
-{
-    "0": {
-        "activity": {
-            "id": "147802",
-            "component": "xprofile",
-            "type": "profile_updated",
-            "action": "User Status",
-            "content": "Integer sit amet libero id est tristique fringilla.",
-            "dateRecorded": "2012-12-16 11:01:22"
-        }
-    },
-    "1": {
-        "activity": {
-            "id": "147803",
-            "component": "xprofile",
-            "type": "profile_updated",
-            "action": "User Status",
-            "content": "Etiam faucibus nunc vitae ipsum blandit scelerisque laoreet vel lorem.",
-            "dateRecorded": "2012-12-12 19:24:11"
-        }
-    },
-    "2": {
-        "activity": {
-            "id": "147804",
-            "component": "xprofile",
-            "type": "profile_updated",
-            "action": "User Status",
-            "content": ". Nulla gravida viverra urna. Aenean condimentum.",
-            "dateRecorded": "2012-12-01 09:34:38"
-        }
-    },
-    "_metadata": [{
-        "offset": "0",
-        "limit": "3",
-        "totalCount": "2620"
-    }]
-},
-  &quot;status_code&quot;: 200,
-  &quot;status_txt&quot;: &quot;OK&quot;
-}
-</pre>
-
-</div>
-
-<div class="apiendpoint" id="v1_user_groups">
-
-<h2>/v1/users/:user_id/groups</h2>
-<p>Returns an array of groups a given user is a member of.</p>
-<h3>Parameters</h3>
-<ul>
-<li>
-<p>user_id -  the unique vc4a identifier for the user.</p>
-</li>
-</ul>
-<p><strong>Note</strong></p>
-<ul>
-<li><code>user_id</code> is a required parameter.</li>
-</ul>
-<h3>Return Values</h3>
-<ul>
-<li>id - the unique vc4a identifier for the group.</li>
-<li>creator_id - the unique  identifier for the creator of the group.</li>
-<li>name - the corresponding name of the group.</li>
-<li>slug - a URL friendly version of the group name.</li>
-<li>description - the corresponding description of the group.</li>
-<li>metadata - <code>offset</code>, <code>limit</code> and <code>totalCount</code>.</li>
-</ul>
-<h3>Example Request</h3>
-<pre class="example">API Address: https://api.vc4africa.biz
-GET /v1/users/1/groups</pre>
-
-<h3>Example Response</h3>
-<pre class="prettyprint lang-js">
-{
-    "0": {
-        "user": {
-            "id": "4",
-            "creator_id": "1",
-            "name": "Telecoms Group",
-            "slug": "telecoms-group",
-            "description": "A group for members interested in the telecommunications sector."
-        }
-    },
-    "1": {
-        "user": {
-            "id": "10",
-            "creator_id": "1",
-            "name": "Cameroon Group",
-            "slug": "cameroon",
-            "description": "A group dedicated to members with an interest in Cameroon."
-        }
-    },
-    "2": {
-        "user": {
-            "id": "15",
-            "creator_id": "1",
-            "name": "Ethiopia Group",
-            "slug": "ethiopia",
-            "description": "A group dedicated to members with an interest in Ethiopia."
-        }
-    },
-    "3": {
-        "user": {
-            "id": "17",
-            "creator_id": "1",
-            "name": "Swaziland Group",
-            "slug": "swaziland",
-            "description": "A group for people who really dig Swaziland."
-        }
-    },
-    "_metadata": [{
-        "offset": "0",
-        "limit": "20",
-        "totalCount": 4
-    }]
-},
-  &quot;status_code&quot;: 200,
-  &quot;status_txt&quot;: &quot;OK&quot;
-}
-</pre>
-
 </div>
 
 <?php include( 'footer.php' ); ?> 

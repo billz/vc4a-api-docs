@@ -335,8 +335,6 @@ GET /v1/ventures/18/team.json</pre>
 <li>sector - the primary sector the venture is engaged in.</li>
 <li>tag - a list of tags associated with the venture.</li>
 <li>status - the current fundraising status of the venture.</li>
-<li>id - the unique vc4a identifier for the venture.</li>
-    
 </ul>
 <p><strong>Note</strong></p>
 <ul>

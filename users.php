@@ -21,8 +21,7 @@
 
 <h2>/v1/users</h2>
 <p>Returns an array of compact user objects, according to default
-    record offset and limit. (OAuth and user authorization
-    required).</p>
+    record offset and limit.</p>
 <h3>Parameters</h3>
 <ul>
 <li>
@@ -36,6 +35,7 @@
 <ul>
 <li><code>limit</code> is optional (defaults to 20).</li>
 <li><code>offset</code> is optional (defaults to 0).</li>
+<li>VC4A API key authorization required.</li>
 </ul>
 <h3>Return Values</h3>
 <ul>
@@ -110,6 +110,7 @@ GET /v1/users?offset=0&limit=5</pre>
 <p><strong>Note</strong></p>
 <ul>
 <li><code>user_id</code> is a required parameter.</li>
+<li>VC4A API key authorization required.</li>
 </ul>
 <h3>Return Values</h3>
 <ul>
@@ -161,6 +162,7 @@ GET /v1/users/1580</pre>
 <p><strong>Note</strong></p>
 <ul>
 <li><code>user_id</code> is a required parameter.</li>
+<li>VC4A API key authorization required.</li>
 </ul>
 <h3>Return Values</h3>
 <ul>
@@ -233,6 +235,7 @@ GET /v1/users/1/ventures.json</pre>
 <p><strong>Note</strong></p>
 <ul>
 <li><code>user_id</code> is a required parameter.</li>
+<li>VC4A API key authorization required.</li>
 </ul>
 <h3>Return Values</h3>
 <ul>
@@ -295,6 +298,7 @@ GET /v1/users/1/followers.json</pre>
 <p><strong>Note</strong></p>
 <ul>
 <li><code>user_id</code> is a required parameter.</li>
+<li>VC4A API key authorization required.</li>
 </ul>
 <h3>Return Values</h3>
 <ul>
@@ -355,6 +359,7 @@ GET /v1/users/1/following.json</pre>
 <p><strong>Note</strong></p>
 <ul>
 <li><code>user_id</code> is a required parameter.</li>
+<li>VC4A API key authorization required.</li>
 </ul>
 <h3>Return Values</h3>
 <ul>
