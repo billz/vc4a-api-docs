@@ -11,12 +11,10 @@
 <div id="apitoc"><ul>
 <li><a href="#v1_user_info">/v1/users</a></li>
 <li><a href="#v1_user_id">/v1/users/:user_id</a></li>
-<li><a href="#v1_user_badges">/v1/users/:user_id/badges</a></li>
 <li><a href="#v1_user_ventures">/v1/users/:user_id/ventures</a></li>
 <li><a href="#v1_user_followers">/v1/users/:user_id/followers</a></li>
 <li><a href="#v1_user_following">/v1/users/:user_id/following</a></li>
 <li><a href="#v1_user_activity">/v1/users/:user_id/activity</a></li>
-<li><a href="#v1_user_groups">/v1/users/:user_id/groups</a></li>
 </ul></div>
 
 <div class="apiendpoint" id="v1_user_info">
@@ -42,7 +40,6 @@
 <h3>Return Values</h3>
 <ul>
 <li>id - the unique vc4a identifier for the user.</li>
-<li>userLogin - the corresponding login name for the user.</li>
 <li>firstName - the corresponding first name for the user.</li>
 <li>lastName - the corresponding last name for the user.</li>
 <li>displayName - the display name chosen by the user (defaults to first/last name).</li>
@@ -58,39 +55,34 @@ GET /v1/users?offset=0&limit=5</pre>
 {
     "users": [{
         "id": "1580",
-        "userLogin": "nelsonkana",
         "firstName": "Nelson",
         "lastName": "Kana",
         "displayName": "Nelson Kana",
-        "lastActive": "2012-09-19 13:59:27"
+        "lastActive": "2015-09-19 13:59:27"
     }, {
         "id": "7573",
-        "userLogin": "davidvandijk",
-        "firstName": "David",
-        "lastName": "van Dijk",
-        "displayName": "David van Dijk",
-        "lastActive": "2012-07-24 08:00:32"
+        "firstName": "Hendrik",
+        "lastName": "Admiraal",
+        "displayName": "Hendrik Admiraal",
+        "lastActive": "2015-09-24 08:00:32"
     }, {
         "id": "1156",
-        "userLogin": "benwhite",
-        "firstName": "Ben",
-        "lastName": "White",
-        "displayName": "Ben White",
-        "lastActive": "2012-10-09 10:05:53"
+        "firstName": "Neil",
+        "lastName": "deGrasse Tyson",
+        "displayName": "Neil deGrasse Tyson",
+        "lastActive": "2015-10-09 10:05:53"
     }, {
         "id": "9155",
-        "userLogin": "ebottabi",
-        "firstName": "Ebot",
-        "lastName": "Tabi",
-        "displayName": "Ebot Tabi",
-        "lastActive": "2012-07-24 08:01:17"
+        "firstName": "Nikola",
+        "lastName": "Tesla",
+        "displayName": "Nikola Tesla",
+        "lastActive": "2015-09-24 08:01:17"
     }, {
-        "id": "121",
-        "userLogin": "billzimmerman",
+        "id": "1",
         "firstName": "Bill",
         "lastName": "Zimmerman",
         "displayName": "Bill Zimmerman",
-        "lastActive": "2012-03-27 13:02:26"
+        "lastActive": "2015-09-27 13:02:26"
     }],
     "_metadata": [{
         "offset": "0",
@@ -156,73 +148,6 @@ GET /v1/users/1580</pre>
 
 </div>
 
-
-<div class="apiendpoint" id="v1_user_badges">
-
-<h2>/v1/users/:user_id/badges</h2>
-<p>Returns a compact array of badges unlocked by a given user.</p>
-<h3>Parameters</h3>
-<ul>
-<li>
-<p>user_id -  the unique vc4a identifier for the user.</p>
-</li>
-</ul>
-<p><strong>Note</strong></p>
-<ul>
-<li><code>user_id</code> is a required parameter.</li>
-</ul>
-<h3>Return Values</h3>
-<ul>
-<li>id - the unique vc4a identifier for the badge.</li>
-<li>actionCount - the number of action counts recorded for the given badge.</li>
-<li>name - the corresponding name for the badge.</li>
-<li>description - the corresponding description for the badge.</li>
-<li>slug - a URL friendly version of the resource name.</li>
-<li>unlockedAt - a <code>timestamp</code> representing the time at which the badge was unlocked.</li>
-<li>metadata - <code>offset</code>, <code>limit</code> and <code>totalCount</code>.</li>
-</ul>
-<h3>Example Request</h3>
-<pre class="example">API Address: https://api.vc4africa.biz
-GET /v1/users/1/badges</pre>
-
-<h3>Example Response</h3>
-<pre class="prettyprint lang-js">
-{
-    "badges": [{
-        "id": "3",
-        "actionCount": "1",
-        "name": "Green Entrepreneur",
-        "description": "You posted a green venture.",
-        "slug": "green-entrepreneur",
-        "unlockedAt": "2012-07-23 15:27:15"
-    }, {
-        "id": "1",
-        "actionCount": "1",
-        "name": "Crowd Favorite",
-        "description": "Your venture was voted to the rop in 30 days ranking.",
-        "slug": "crowd-favorite",
-        "unlockedAt": "2012-07-23 15:29:52"
-    }, {
-        "id": "10",
-        "actionCount": "1",
-        "name": "DEMO-Africa Judge",
-        "description": "You are a judge for DEMO-Africa",
-        "slug": "demo-judge",
-        "unlockedAt": "2012-09-08 10:42:32"
-    }],
-    "_metadata": {
-        "offset": "0",
-        "limit": "20",
-        "totalCount": 3
-    }
-},
-  &quot;status_code&quot;: 200,
-  &quot;status_txt&quot;: &quot;OK&quot;
-}
-</pre>
-
-</div>
-
 <div class="apiendpoint" id="v1_user_ventures">
 
 <h2>/v1/users/:user_id/ventures</h2>
@@ -250,7 +175,7 @@ GET /v1/users/1/badges</pre>
 </ul>
 <h3>Example Request</h3>
 <pre class="example">API Address: https://api.vc4africa.biz
-GET /v1/users/1/ventures</pre>
+GET /v1/users/1/ventures.json</pre>
 
 <h3>Example Response</h3>
 <pre class="prettyprint lang-js">
@@ -316,7 +241,7 @@ GET /v1/users/1/ventures</pre>
 </ul>
 <h3>Example Request</h3>
 <pre class="example">API Address: https://api.vc4africa.biz
-GET /v1/users/1/followers</pre>
+GET /v1/users/1/followers.json</pre>
 
 <h3>Example Response</h3>
 <pre class="prettyprint lang-js">
@@ -378,7 +303,7 @@ GET /v1/users/1/followers</pre>
 </ul>
 <h3>Example Request</h3>
 <pre class="example">API Address: https://api.vc4africa.biz
-GET /v1/users/1/following</pre>
+GET /v1/users/1/following.json</pre>
 
 <h3>Example Response</h3>
 <pre class="prettyprint lang-js">
@@ -443,7 +368,7 @@ GET /v1/users/1/following</pre>
 </ul>
 <h3>Example Request</h3>
 <pre class="example">API Address: https://api.vc4africa.biz
-GET /v1/users/1/activity?limit=3</pre>
+GET /v1/users/1/activity.json?limit=3</pre>
 
 <h3>Example Response</h3>
 <pre class="prettyprint lang-js">
@@ -492,83 +417,6 @@ GET /v1/users/1/activity?limit=3</pre>
 </div>
 
 <div class="apiendpoint" id="v1_user_groups">
-
-<h2>/v1/users/:user_id/groups</h2>
-<p>Returns an array of groups a given user is a member of.</p>
-<h3>Parameters</h3>
-<ul>
-<li>
-<p>user_id -  the unique vc4a identifier for the user.</p>
-</li>
-</ul>
-<p><strong>Note</strong></p>
-<ul>
-<li><code>user_id</code> is a required parameter.</li>
-</ul>
-<h3>Return Values</h3>
-<ul>
-<li>id - the unique vc4a identifier for the group.</li>
-<li>creator_id - the unique  identifier for the creator of the group.</li>
-<li>name - the corresponding name of the group.</li>
-<li>slug - a URL friendly version of the group name.</li>
-<li>description - the corresponding description of the group.</li>
-<li>metadata - <code>offset</code>, <code>limit</code> and <code>totalCount</code>.</li>
-</ul>
-<h3>Example Request</h3>
-<pre class="example">API Address: https://api.vc4africa.biz
-GET /v1/users/1/groups</pre>
-
-<h3>Example Response</h3>
-<pre class="prettyprint lang-js">
-{
-    "0": {
-        "user": {
-            "id": "4",
-            "creator_id": "1",
-            "name": "Telecoms Group",
-            "slug": "telecoms-group",
-            "description": "A group for members interested in the telecommunications sector."
-        }
-    },
-    "1": {
-        "user": {
-            "id": "10",
-            "creator_id": "1",
-            "name": "Cameroon Group",
-            "slug": "cameroon",
-            "description": "A group dedicated to members with an interest in Cameroon."
-        }
-    },
-    "2": {
-        "user": {
-            "id": "15",
-            "creator_id": "1",
-            "name": "Ethiopia Group",
-            "slug": "ethiopia",
-            "description": "A group dedicated to members with an interest in Ethiopia."
-        }
-    },
-    "3": {
-        "user": {
-            "id": "17",
-            "creator_id": "1",
-            "name": "Swaziland Group",
-            "slug": "swaziland",
-            "description": "A group for people who really dig Swaziland."
-        }
-    },
-    "_metadata": [{
-        "offset": "0",
-        "limit": "20",
-        "totalCount": 4
-    }]
-},
-  &quot;status_code&quot;: 200,
-  &quot;status_txt&quot;: &quot;OK&quot;
-}
-</pre>
-
-</div>
 
 <?php include( 'footer.php' ); ?> 
 

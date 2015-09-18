@@ -13,7 +13,6 @@
 <li><a href="authentication.php">Authentication</a></li>
 <li><a href="formats.php">Request / Response Formats</a></li>
 <li><a href="rate_limiting.php">Rate Limiting</a></li>
-<li><a href="badges.php">Badges</a></li>
 <li><a href="fundraising.php">Fundraising</a></li>
 <li><a href="users.php">Users</a></li>
 <li><a href="ventures.php">Ventures</a></li>

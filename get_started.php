@@ -14,7 +14,7 @@
 <div id="content">
 
 <h2>Getting Started</h2>
-<p>Welcome to the VC4A API! If you're looking to query venture data across countries or sectors, get details on unlocked badges, or retrieve user profiles and metadata programmatically, you've come to the right place.</p>
+<p>Welcome to the VC4A API! If you're looking to query venture data across countries or sectors, get details on fundraising, or retrieve user profiles and metadata programmatically, you've come to the right place.</p>
 
 <p>You can dive in right away and explore VC4A's open venture data by calling our <a href="ventures.php">/v1/ventures methods</a>.</p>
 <p>If you are looking to work with <a href="fundraising.php">fundraising data</a>, or to pull any information on a user level, you'll need to <a href="my_apps.php">register an application with us</a> to <a href="authentication.php">authenticate</a> with an API key.</p>
