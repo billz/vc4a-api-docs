@@ -14,16 +14,16 @@
 <body>
     <div class="navbar">
         <div class="navbar-inner">
-            <a class="brand" href="#">VC4A API Client Demo</a>
+            <a class="brand" href="#">VC4A API JavaScript Client Demo</a>
         </div>
     </div>
     <div id="main" class="container">
         <div id="content">
-            <h1>Ventures in Nigeria</h1>
+            <h1>Mobile ventures in Nigeria</h1>
             <div id="map"></div>
             <h3>API Call</h3>
             dataType: JSON<br />
-            url: https://api.vc4africa.biz/v1/ventures/search.json?country=nigeria&limit=200<br />
+            url: https://api.vc4africa.biz/v1/ventures/search.json?country=nigeria&amp;sector=mobile&amp;limit=100<br />
             type: GET<br />
         </div>
         
@@ -40,19 +40,21 @@
 
         $.ajax({
             dataType: "json",
-            url: "https://api.vc4africa.biz/v1/ventures/search.json?country=nigeria&limit=200",
+            url: "https://api.vc4africa.biz/v1/ventures/search.json?country=nigeria&sector=mobile&limit=100",
             type: "GET",
             success: function(data){        
                 //console.log(data);
                 $.each(data, function() {
-                    $.each(this, function(index, value) {
-                        map.addMarker({
-                        lat: this.latitude,
-                        lng: this.longitude,
-                        infoWindow: {
-                            content: this.title
-                            }                            
-                        })
+                    $.each(this, function() {
+                        if (typeof this.latitude != 'undefined' && typeof this.longitude != 'undefined') {
+                            map.addMarker({
+                            lat: this.latitude,
+                            lng: this.longitude,
+                            infoWindow: {
+                                content: this.title
+                                }                            
+                            })
+                        }
                     });
                 });
             },
@@ -63,7 +65,6 @@
         });
 
     });
-
     </script>
 </body>
 </html>
