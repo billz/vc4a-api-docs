@@ -1,6 +1,0 @@
-//the following packages will be needed
-
-
-pip install Flask
-
-pip install requests

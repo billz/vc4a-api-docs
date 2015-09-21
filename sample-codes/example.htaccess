@@ -1,6 +1,0 @@
-#sample .htaccess
-#create a .htaccess file similar to this one.
-Options +FollowSymLinks
-RewriteEngine On
-RewriteCond %{REQUEST_FILENAME} !-f
-RewriteRule	^(.*)$	index.php [QSA,L]
