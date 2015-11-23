@@ -167,6 +167,8 @@ GET /v1/ventures.json?offset=0&limit=5</pre>
 <li>tags - an array of tags associated with the venture.</li>
 <li>fundStatus - the current fundraising status of the venture.</li>
 <li>country - the primary country where the venture is based.</li>
+<li>network strength - a decimal value corresponding to the calculated signal strength of the venture.</li>
+<li>shorturl - the short URL which redirects to the full URI of the venture.</li>
 <li>latitude - the north-south distance from the equator, expressed in degrees and minutes.</li>
 <li>longitude - the east-west distance from the meridian, expressed in degrees and minutes.</li>
 <li>followers - an array of unique identifiers for the users who are following the venture.</li>
@@ -222,6 +224,8 @@ GET /v1/ventures/18.json</pre>
     }],
     "fundStatus": "Seeking Investor",
     "country": "Cape Verde",
+    "network_strength": "0.79",
+    "shorturl": "http://vc4afri.ca/6n03e",
     "latitude": "15.210222837556922",
     "longitude": "-23.88184306249991",
     "followers": [{
