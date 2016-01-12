@@ -16,7 +16,7 @@ Even if the back end is built in Ruby on Rails, PHP, Java, Python etc., most pro
     
 <ul>
 <li>
-<p>All API requests should be against the domain <code>api.vc4africa.biz</code>.</p>
+<p>All API requests should be against the domain <code>api.vc4a.com</code>.</p>
 </li>
 <li>
 <p>All API endpoints should begin with the version number. For example, <code>/v1/ventures</code>.</p>

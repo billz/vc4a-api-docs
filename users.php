@@ -47,7 +47,7 @@
 <li>metadata - <code>offset</code>, <code>limit</code> and <code>totalCount</code>.</li>
 </ul>
 <h3>Example Request</h3>
-<pre class="example">API Address: https://api.vc4africa.biz
+<pre class="example">API Address: https://api.vc4a.com
 GET /v1/users?offset=0&limit=5</pre>
 
 <h3>Example Response</h3>
@@ -125,7 +125,7 @@ GET /v1/users?offset=0&limit=5</pre>
 <li>country - the country where the user is located.</li>
 </ul>
 <h3>Example Request</h3>
-<pre class="example">API Address: https://api.vc4africa.biz
+<pre class="example">API Address: https://api.vc4a.com
 GET /v1/users/1580</pre>
 
 <h3>Example Response</h3>
@@ -176,7 +176,7 @@ GET /v1/users/1580</pre>
 <li>longitude - the east-west distance from the meridian, expressed in degrees and minutes.</li>
 </ul>
 <h3>Example Request</h3>
-<pre class="example">API Address: https://api.vc4africa.biz
+<pre class="example">API Address: https://api.vc4a.com
 GET /v1/users/1/ventures.json</pre>
 
 <h3>Example Response</h3>
@@ -243,7 +243,7 @@ GET /v1/users/1/ventures.json</pre>
 <li>metadata - <code>offset</code>, <code>limit</code> and <code>totalCount</code>.</li>
 </ul>
 <h3>Example Request</h3>
-<pre class="example">API Address: https://api.vc4africa.biz
+<pre class="example">API Address: https://api.vc4a.com
 GET /v1/users/1/followers.json</pre>
 
 <h3>Example Response</h3>
@@ -306,7 +306,7 @@ GET /v1/users/1/followers.json</pre>
 <li>metadata - <code>offset</code>, <code>limit</code> and <code>totalCount</code>.</li>
 </ul>
 <h3>Example Request</h3>
-<pre class="example">API Address: https://api.vc4africa.biz
+<pre class="example">API Address: https://api.vc4a.com
 GET /v1/users/1/following.json</pre>
 
 <h3>Example Response</h3>
@@ -372,7 +372,7 @@ GET /v1/users/1/following.json</pre>
 <li>metadata - <code>offset</code>, <code>limit</code> and <code>totalCount</code>.</li>
 </ul>
 <h3>Example Request</h3>
-<pre class="example">API Address: https://api.vc4africa.biz
+<pre class="example">API Address: https://api.vc4a.com
 GET /v1/users/1/activity.json?limit=3</pre>
 
 <h3>Example Response</h3>

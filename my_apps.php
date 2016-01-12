@@ -18,7 +18,7 @@ is via a partner login and API Key pair. If you would like to be a beta partner,
 </p>
 <p>After the private beta is closed, we will support registration of an application that allows you to authenticate multiple VC4A accounts (including your own) via OAuth.
 <!--p>You can currently create and manage up to 5 applications under a single VC4A account. Just click the below button to begin registering a new application with VC4A, or to view your existing apps.</p>
-<p><br /><a href="http://my.vc4africa.biz/a/oauth_apps" class="button">Manage My Apps</a></p-->
+<p><br /><a href="http://my.vc4a.com/a/oauth_apps" class="button">Manage My Apps</a></p-->
 </div>
 
 <?php include( 'footer.php' ); ?> 

@@ -50,7 +50,7 @@ Default record offset and limits apply.</p>
 <li>longitude - the east-west distance from the meridian, expressed in degrees and minutes.</li>
 </ul>
 <h3>Example Request</h3>
-<pre class="example">API Address: https://api.vc4africa.biz
+<pre class="example">API Address: https://api.vc4a.com
 GET /v1/ventures.json?offset=0&limit=5</pre>
 
 <h3>Example Response</h3>
@@ -174,7 +174,7 @@ GET /v1/ventures.json?offset=0&limit=5</pre>
 <li>followers - an array of unique identifiers for the users who are following the venture.</li>
 </ul>
 <h3>Example Request</h3>
-<pre class="example">API Address: https://api.vc4africa.biz
+<pre class="example">API Address: https://api.vc4a.com
 GET /v1/ventures/18.json</pre>
 
 <h3>Example Response</h3>
@@ -261,7 +261,7 @@ GET /v1/ventures/18.json</pre>
 </li>
 </ul>
 <h3>Example Request:</h3>
-<pre class="example">API Address: https://api.vc4africa.biz
+<pre class="example">API Address: https://api.vc4a.com
 GET /v1/ventures/18/activity.json</pre>
 
 <h3>Example Response:</h3>
@@ -269,12 +269,12 @@ GET /v1/ventures/18/activity.json</pre>
     "venture_activity": [{
         "id": "150596",
         "date": "2012-09-05 15:32:23",
-        "action": "<a href="https://vc4africa.biz/members/paul/" title="Paul">Paul</a> created the venture <a href="">GreenGlow Stoves</a>.",
+        "action": "<a href="https://vc4a.com/members/paul/" title="Paul">Paul</a> created the venture <a href="">GreenGlow Stoves</a>.",
         "content": ""
     }, {
         "id": "150623",
         "date": "2012-10-04 09:06:55",
-        "action": "<a href="https://vc4africa.biz/members/alice/" title="Alice">Alice</a> posted an update in the venture <a href="">GreenGlow Stoves</a>",
+        "action": "<a href="https://vc4a.com/members/alice/" title="Alice">Alice</a> posted an update in the venture <a href="">GreenGlow Stoves</a>",
         "content": "Great things happening here!"
     }],
     "_metadata": [{
@@ -304,7 +304,7 @@ GET /v1/ventures/18/activity.json</pre>
 </ul>
 
 <h3>Example Request:</h3>
-<pre class="example">API Address: https://api.vc4africa.biz
+<pre class="example">API Address: https://api.vc4a.com
 GET /v1/ventures/18/team.json</pre>
 
 <h3>Return Values</h3>
@@ -363,7 +363,7 @@ GET /v1/ventures/18/team.json</pre>
 </ul>
 
 <h3>Example Request:</h3>
-<pre class="example">API Address: https://api.vc4africa.biz
+<pre class="example">API Address: https://api.vc4a.com
 GET /v1/ventures/search.json?country=Ethiopia&status=r_fundraising</pre>
 
 <h3>Example Response:</h3>
@@ -422,7 +422,7 @@ GET /v1/ventures/search.json?country=Ethiopia&status=r_fundraising</pre>
 </ul>
 
 <h3>Example Request:</h3>
-<pre class="example">API Address: https://api.vc4africa.biz
+<pre class="example">API Address: https://api.vc4a.com
 GET /v1/ventures/countries.json</pre>
 
 <h3>Example Response:</h3>

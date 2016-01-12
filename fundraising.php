@@ -48,7 +48,7 @@
 <li>capital - the amount of capital in USD for the round.</li>
 </ul>
 <h3>Example Request</h3>
-<pre class="example">API Address: https://api.vc4africa.biz
+<pre class="example">API Address: https://api.vc4a.com
 GET /v1/fundraising.json?status=r_fundraising&limit=5</pre>
 
 <h3>Example Response</h3>
@@ -136,7 +136,7 @@ GET /v1/fundraising.json?status=r_fundraising&limit=5</pre>
 </ul>
 </ul>
 <h3>Example Request</h3>
-<pre class="example">API Address: https://api.vc4africa.biz
+<pre class="example">API Address: https://api.vc4a.com
 GET /v1/fundraising/search.json?status=r_completed&limit=5</pre>
 
 <h3>Example Response</h3>

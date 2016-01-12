@@ -18,7 +18,7 @@ In the near future, the VC4A API will support the OAuth 2 draft specification.
 
 
 <h2><a id="apikey"></a>API Key authentication</h2>
-<p>API requests to endpoints that accept a <code>partnerID</code> and <code>apiKey</code> may be made to <code>https://api.vc4africa.biz/</code>.
+<p>API requests to endpoints that accept a <code>partnerID</code> and <code>apiKey</code> may be made to <code>https://api.vc4a.com/</code>.
 Authentication via API key is suggested only for situations in which you will be using the VC4A API on behalf of a single user or site.</p>
 
 <p>   
@@ -29,7 +29,7 @@ import json
 import requests
 from requests.auth import HTTPDigestAuth    
   
-url = 'https://api.vc4africa.biz/v1/ventures.json'
+url = 'https://api.vc4a.com/v1/ventures.json'
 payload = {'offset':'0', 'limit':'40'}    
 response = requests.get (url, auth = HTTPDigestAuth('myParterId', 'cd91007e366c099bb6b526a4'), params=payload )
 data = json.loads(response.content)
