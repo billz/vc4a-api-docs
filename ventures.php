@@ -42,9 +42,13 @@ Default record offset and limits apply.</p>
 <li>ownerid - the unique identifier for the venture owner.</li>
 <li>title - the corresponding name for the venture.</li>
 <li>date_created - the date/time the venture was created.</li>
+<li>date_founded - the date the venture was founded.</li>
 <li>pitch - the corresponding pitch for the venture.</li>
-<li>network strength - a decimal value corresponding to the calculated signal strength of the venture.</li>
+<li>tagline - the short description of the venture.</li>
+<li>website - the URI corresponding to the venture website.</li>
+<li>network strength - a percentage value corresponding to the calculated network strength of the venture.</li>
 <li>shorturl - the short URL which redirects to the full URI of the venture.</li>
+<li>address - the physical address for the venture's base of operations.</li>
 <li>country - the primary country where the venture is based.</li>
 <li>latitude - the north-south distance from the equator, expressed in degrees and minutes.</li>
 <li>longitude - the east-west distance from the meridian, expressed in degrees and minutes.</li>
@@ -59,58 +63,78 @@ GET /v1/ventures.json?offset=0&limit=5</pre>
     "ventures": [{
         "id": "9",
         "ownerid": "13",
-        "title": "Miniature Vancouver",
+        "title": "Miniature Africa",
         "date_created": "2015-04-15 10:51:26",
-        "pitch": "Vivamus ac lorem metus. Sed eu sapien risus, sed vehicula nulla.",
-        "network_strength": "0.24",
+        "date_founded": "2014-03-01",
+        "pitch": "We are a digitial photo/video processing service using the latest tiltshift technology.",
+        "tagline": "Your world in miniature.",
+        "website": "https://tiltshift.me",
+        "network_strength": "74",
         "shorturl": "http://vc4afri.ca/cl8j4",
+        "address": "Chad St, Addis Ababa",
         "country": "Ethiopia",
-        "latitude": "4.287556427760489",
-        "longitude": "10.689018062500054"
+        "latitude": "9.011821",
+        "longitude": "38.732884"
     }, {
         "id": "12",
         "ownerid": "22",
         "title": "Panda Whale",
         "date_created": "2015-04-14 11:31:53",
+        "date_founded": "2012-12-05",
         "pitch": "We are a consumer Internet service for organizing and sharing great content.",
-        "network_strength": "0.61",
+        "tagline": "Discover and share the best content.",
+        "website": "https://pandawhale.co.ke",
+        "network_strength": "81",
         "shorturl": "http://vc4afri.ca/7cqso",
+        "address": "1436 Sanusi Fafunwa St, Lagos",
         "country": "Nigeria",
-        "latitude": "-13.667338259654947",
-        "longitude": "28.6962890625"
+        "latitude": "6.430777",
+        "longitude": "3.427831"
     }, {
         "id": "13",
         "ownerid": "19",
         "title": "Mino Monsters",
         "date_created": "2015-04-13 10:25:49",
+        "date_founded": "2010-05-01",
         "pitch": "Discover which of your friends are voters and campaign with them to elect Pokemon.",
-        "network_strength": "0.83",
+        "tagline": "Innovating the Pokemon election space.",
+        "website": "http://www.minomonsters.com/",
+        "network_strength": "83",
         "shorturl": "http://vc4afri.ca/ogrgq",
+        "address": "18 Ave Churchill, Yaounde",
         "country": "Cameroon",
-        "latitude": "5.2509943447956795",
-        "longitude": "12.007377437500054"
+        "latitude": "3.875808",
+        "longitude": "11.518068"
     }, {
         "id": "16",
         "ownerid": "44",
         "title": "Anvil Studio",
         "date_created": "2015-04-12 15:43:03",
+        "date_founded": "2006-04-30",
         "pitch": "Maker of the finest widgets to simplify your modern life.",
-        "network_strength": "0.55",
+        "tagline": "Widgets 'R' Us",
+        "website": "https://anvilstudio.co",
+        "network_strength": "65",
         "shorturl": "http://vc4afri.ca/7xxmk",
+        "address": "4th Parklands Avenue, Nairobi",
         "country": "Kenya",
-        "latitude": "4.199906782278597",
-        "longitude": "11.216361812500054"
+        "latitude": "-1.257095",
+        "longitude": "36.817868"
     }, {
         "id": "18",
         "ownerid": "30",
-        "title": "Space Tourism",
+        "title": "SpaceX",
         "date_created": "2015-04-12 09:07:29",
-        "pitch": "We launch people into space. 'Nuff said.",
-        "network_strength": "0.91",
-        "shorturl": "http://vc4afri.ca/jdq55",
-        "country": "Cape Verde",
-        "latitude": "15.210222837556922",
-        "longitude": "-23.88184306249991"
+        "date_founded": "2009-06-20",
+        "pitch": "We are an aerospace manufacturer and space transport services company.",
+        "tagline": "Design, manufacture and launche advanced spacecraft.",
+        "website": "https://spacex.com",
+        "network_strength": "91",
+        "shorturl": "http://vc4afri.ca/zp4j2",
+        "address": "1 Rocket Rd, Hawthorne CA",
+        "country": "United States",
+        "latitude": "33.920587",
+        "longitude": "-118.327140"
     }],
     "_metadata": [{
         "offset": "0",
@@ -142,6 +166,19 @@ GET /v1/ventures.json?offset=0&limit=5</pre>
 <li>ownerid - the unique identifier for the venture owner.</li>
 <li>title - the corresponding title for the venture.</li>
 <li>pitch - the corresponding textual pitch for the venture.</li>
+<li>tagline - the short description of the venture.</li>
+<li>website - the URI corresponding to the venture website.</li>
+<li>video_pitch - the URI corresponding to the venture's video pitch (YouTube, Vimeo, etc.).</li>
+<li>date_created - the date/time the venture was created.</li>
+<li>date_founded - the date the venture was founded.</li>
+<li>tags - an array of tags associated with the venture.</li>
+<li>fundStatus - the current fundraising status of the venture.</li>
+<li>address - the physical address for the venture's base of operations.</li>
+<li>country - the primary country where the venture is based.</li>
+<li>network strength - a percentage value corresponding to the calculated network strength of the venture.</li>
+<li>shorturl - the short URL which redirects to the full URI of the venture.</li>
+<li>latitude - the north-south distance from the equator, expressed in degrees and minutes.</li>
+<li>longitude - the east-west distance from the meridian, expressed in degrees and minutes.</li>
 <li>pitch_type - a string value corresponding to the type of pitch (elevator, longer, complex).</li>
 <li>risky - a boolean value; high-risk venture that offers potentially high-rewards.</li>
 <li>nda - a boolean value; venture owner requires NDA before sharing business plan.</li>
@@ -164,13 +201,6 @@ GET /v1/ventures.json?offset=0&limit=5</pre>
 <li>sectors - an array of sectors the venture is engaged in.</li>
 <li>interest_regions - an array of regions the ventures is focused on.</li>
 <li>interest_countries - an array of countries the ventures is focused on.</li>
-<li>tags - an array of tags associated with the venture.</li>
-<li>fundStatus - the current fundraising status of the venture.</li>
-<li>country - the primary country where the venture is based.</li>
-<li>network strength - a decimal value corresponding to the calculated signal strength of the venture.</li>
-<li>shorturl - the short URL which redirects to the full URI of the venture.</li>
-<li>latitude - the north-south distance from the equator, expressed in degrees and minutes.</li>
-<li>longitude - the east-west distance from the meridian, expressed in degrees and minutes.</li>
 <li>followers - an array of unique identifiers for the users who are following the venture.</li>
 </ul>
 <h3>Example Request</h3>
@@ -181,8 +211,25 @@ GET /v1/ventures/18.json</pre>
 <pre class="prettyprint lang-js">{
     "id": "18",
     "ownerid": "30",
-    "title": "Space Tourism",
-    "pitch": "We launch people into space. 'Nuff said.",
+    "title": "SpaceX",
+    "pitch": "We are an aerospace manufacturer and space transport services company.",
+    "tagline": "Design, manufacture and launche advanced spacecraft.",
+    "website": "https://spacex.com",
+    "video_pitch": "https://youtu.be/BhMSzC1crr0",
+    "date_created": "2016-07-21 23:18:03",
+    "date_founded": "2002-03-01",
+    "tags": [{
+        "spaceships",
+        "rockets",
+        "mars"
+    }],
+    "fundStatus": "Seeking Investor",
+    "network_strength": "91",
+    "shorturl": "http://vc4afri.ca/zp4j2",
+    "address": "1 Rocket Rd, Hawthorne CA",
+    "country": "United States",
+    "latitude": "33.920587",
+    "longitude": "-118.327140"
     "pitch_type: "elevator",
     "risky": true,
     "nda": false,
@@ -200,8 +247,7 @@ GET /v1/ventures/18.json</pre>
     "revenue": "now",
     "revenue_plan": "We are a profit-making business in a niche market.",
     "notes": null,
-    "quickscan_last_updated": "2015-03-10 05:51:47",
-    "address": null,
+    "quickscan_last_updated": "2016-09-10 05:51:47",
     "sectors": [{
         "Aerospace",
         "Engineering",
@@ -209,27 +255,35 @@ GET /v1/ventures/18.json</pre>
     }],
     "interest_regions": [{
         "East Africa",
-        "Southern Africa",
-        "West Africa"
+        "North America",
+        "Western Europe",
+        "Low Earth Orbit",
+        "Mars",
+        "Deep Space"
     }],
     "interest_countries": [{
         "Kenya",
         "Botswana",
-        "Ghana"
+        "Ghana",
+        "United States"
     }],
-    "tags": [{
-        "space",
-        "rockets",
-        "awesome"
-    }],
-    "fundStatus": "Seeking Investor",
-    "country": "Cape Verde",
-    "network_strength": "0.79",
-    "shorturl": "http://vc4afri.ca/6n03e",
-    "latitude": "15.210222837556922",
-    "longitude": "-23.88184306249991",
     "followers": [{
-        "userid": "1"
+        "userid": "4613",
+        {
+        "userid": "34892"
+        },
+        {
+        "userid": "13"
+        },
+        {
+        "userid": "13802"
+        },
+        {
+        "userid": "4769"
+        },
+        {
+        "userid": "16838"
+        },
     }]
 },
   &quot;status_code&quot;: 200,
@@ -268,14 +322,21 @@ GET /v1/ventures/18/activity.json</pre>
 <pre class="prettyprint lang-js">{
     "venture_activity": [{
         "id": "150596",
-        "date": "2012-09-05 15:32:23",
-        "action": "<a href="https://vc4a.com/members/paul/" title="Paul">Paul</a> created the venture <a href="">GreenGlow Stoves</a>.",
+        "date": "2016-09-05 15:32:23",
+        "action": "Paul created the venture GreenGlow Stoves.",
         "content": ""
-    }, {
-        "id": "150623",
-        "date": "2012-10-04 09:06:55",
-        "action": "<a href="https://vc4a.com/members/alice/" title="Alice">Alice</a> posted an update in the venture <a href="">GreenGlow Stoves</a>",
-        "content": "Great things happening here!"
+        },
+        {
+        id: "123780",
+        date: "2016-07-21 21:22:27",
+        action: "GreenGlow Stoves has added a round to their funding history.",
+        content: ""
+        },
+        {
+        id: "123782",
+        date: "2016-07-21 21:38:37",
+        action: "The venture GreenGlow Stoves has added the QuickScan details.",
+        content: ""
     }],
     "_metadata": [{
         "offset": "0",
@@ -293,7 +354,7 @@ GET /v1/ventures/18/activity.json</pre>
 <div class="apiendpoint" id="v1_ventures_team">
 
 <h2>/v1/ventures/:venture_id/team</h2>
-<p>Returns a list of IDs for the team member(s) associated with a given venture.</p>
+<p>Returns a list of IDs, names and titles for the team member(s) associated with a given venture.</p>
 <h3>Parameters</h3>
 <ul>
 <li>venture_id - the unique vc4a identifier for the venture.</li>
@@ -315,15 +376,24 @@ GET /v1/ventures/18/team.json</pre>
 <h3>Example Response:</h3>
 <pre class="prettyprint lang-js">{
     "team_members": [{
-        "userid": "1580",
-        "userid": "1210",
-        "userid": "930",
-        "userid": "9107"
+        userid: "14320",
+        fullname: "Mark Mwaura",
+        title: "CEO"
+        },
+        {
+        userid: "14400",
+        fullname: "Muigai Mwaura",
+        title: "Technical Lead"
+        },
+        {
+        userid: "17575",
+        fullname: "Joseph Karanja",
+        title: "Co-Founder and Business Lead"
     }],
     "_metadata": [{
         "offset": "0",
         "limit": "20",
-        "totalCount": 4
+        "totalCount": 3
     }]
 }</pre>
 </div>
