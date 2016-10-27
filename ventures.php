@@ -421,10 +421,17 @@ GET /v1/ventures/18/team.json</pre>
 <li>id - the unique vc4a identifier for the venture.</li>
 <li>owner - the unique identifier for the venture owner.</li>
 <li>title - the corresponding title for the venture.</li>
+<li>date_created - the date/time the venture was created.</li>
+<li>date_founded - the date the venture was founded.</li>
 <li>pitch - the corresponding pitch for the venture.</li>
-<li>sector - the primary sector the ventures is engaged in.</li>
-<li>tags - a comma-delimted list of tags associated with the venture.</li>
+<li>tagline - the short description of the venture.</li>
+<li>website - the URI corresponding to the venture website.</li>
+<li>sectors - an array of sectors the venture is engaged in.</li>
+<li>tags - an array of tags corresponding to the venture.</li>
 <li>fundStatus - the current fundraising status of the venture.</li>
+<li>network strength - a percentage value corresponding to the calculated network strength of the venture.</li>
+<li>shorturl - the short URL which redirects to the full URI of the venture.</li>
+<li>address - the physical address for the venture's base of operations.</li>
 <li>country - the primary country where the venture is based.</li>
 <li>latitude - the north-south distance from the equator, expressed in degrees and minutes.</li>
 <li>longitude - the east-west distance from the meridian, expressed in degrees and minutes.</li>
@@ -440,15 +447,31 @@ GET /v1/ventures/search.json?country=Ethiopia&status=r_fundraising</pre>
 <pre class="prettyprint lang-js">{
     "ventures": [{
         "id": "9",
-        "owner": "1",
-        "title": "Miniature Vancouver",
-        "pitch": "Vivamus ac lorem metus. Sed eu sapien risus, sed vehicula nulla.",
-        "sector": "Electronics,Leisure",
-        "tags": "video,documentary,entertainment,cities",
-        "fundStatus": "Raising Capital",
+        "ownerid": "13",
+        "title": "Miniature Africa",
+        "date_created": "2015-04-15 10:51:26",
+        "date_founded": "2014-03-01",
+        "pitch": "We are a digitial photo/video processing service using the latest tiltshift technology.",
+        "tagline": "Your world in miniature.",
+        "website": "https://tiltshift.me",
+        "sectors": [{
+            "E-Commerce",
+            "Internet",
+            "Specialty Retail"
+        }],
+        "tags": [{
+            "photography",
+            "tiltshift",
+            "miniature",
+            "digital effects"
+        }],
+        "fundStatus": "Round Completed",
+        "network_strength": "74",
+        "shorturl": "http://vc4afri.ca/cl8j4",
+        "address": "Chad St, Addis Ababa",
         "country": "Ethiopia",
-        "latitude": "4.287556427760489",
-        "longitude": "10.689018062500054",
+        "latitude": "9.011821",
+        "longitude": "38.732884"
         "followers": [{
             "userid": "60"
         }, {
