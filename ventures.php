@@ -46,7 +46,7 @@ Default record offset and limits apply.</p>
 <li>pitch - the corresponding pitch for the venture.</li>
 <li>tagline - the short description of the venture.</li>
 <li>website - the URI corresponding to the venture website.</li>
-<li>network strength - a percentage value corresponding to the calculated network strength of the venture.</li>
+<li>network_strength - a decimal value corresponding to the calculated network strength of the venture.</li>
 <li>shorturl - the short URL which redirects to the full URI of the venture.</li>
 <li>address - the physical address for the venture's base of operations.</li>
 <li>country - the primary country where the venture is based.</li>
@@ -69,7 +69,7 @@ GET /v1/ventures.json?offset=0&limit=5</pre>
         "pitch": "We are a digitial photo/video processing service using the latest tiltshift technology.",
         "tagline": "Your world in miniature.",
         "website": "https://tiltshift.me",
-        "network_strength": "74",
+        "network_strength": "0.74",
         "shorturl": "http://vc4afri.ca/cl8j4",
         "address": "Chad St, Addis Ababa",
         "country": "Ethiopia",
@@ -84,7 +84,7 @@ GET /v1/ventures.json?offset=0&limit=5</pre>
         "pitch": "We are a consumer Internet service for organizing and sharing great content.",
         "tagline": "Discover and share the best content.",
         "website": "https://pandawhale.co.ke",
-        "network_strength": "81",
+        "network_strength": "0.81",
         "shorturl": "http://vc4afri.ca/7cqso",
         "address": "1436 Sanusi Fafunwa St, Lagos",
         "country": "Nigeria",
@@ -99,7 +99,7 @@ GET /v1/ventures.json?offset=0&limit=5</pre>
         "pitch": "Discover which of your friends are voters and campaign with them to elect Pokemon.",
         "tagline": "Innovating the Pokemon election space.",
         "website": "http://www.minomonsters.com/",
-        "network_strength": "83",
+        "network_strength": "0.83",
         "shorturl": "http://vc4afri.ca/ogrgq",
         "address": "18 Ave Churchill, Yaounde",
         "country": "Cameroon",
@@ -114,7 +114,7 @@ GET /v1/ventures.json?offset=0&limit=5</pre>
         "pitch": "Maker of the finest widgets to simplify your modern life.",
         "tagline": "Widgets 'R' Us",
         "website": "https://anvilstudio.co",
-        "network_strength": "65",
+        "network_strength": "0.65",
         "shorturl": "http://vc4afri.ca/7xxmk",
         "address": "4th Parklands Avenue, Nairobi",
         "country": "Kenya",
@@ -129,7 +129,7 @@ GET /v1/ventures.json?offset=0&limit=5</pre>
         "pitch": "We are an aerospace manufacturer and space transport services company.",
         "tagline": "Design, manufacture and launche advanced spacecraft.",
         "website": "https://spacex.com",
-        "network_strength": "91",
+        "network_strength": "0.91",
         "shorturl": "http://vc4afri.ca/zp4j2",
         "address": "1 Rocket Rd, Hawthorne CA",
         "country": "United States",
@@ -175,7 +175,7 @@ GET /v1/ventures.json?offset=0&limit=5</pre>
 <li>fundStatus - the current fundraising status of the venture.</li>
 <li>address - the physical address for the venture's base of operations.</li>
 <li>country - the primary country where the venture is based.</li>
-<li>network strength - a percentage value corresponding to the calculated network strength of the venture.</li>
+<li>network_strength - a decimal value corresponding to the calculated network strength of the venture.</li>
 <li>shorturl - the short URL which redirects to the full URI of the venture.</li>
 <li>latitude - the north-south distance from the equator, expressed in degrees and minutes.</li>
 <li>longitude - the east-west distance from the meridian, expressed in degrees and minutes.</li>
@@ -224,7 +224,7 @@ GET /v1/ventures/18.json</pre>
         "mars"
     }],
     "fundStatus": "Seeking Investor",
-    "network_strength": "91",
+    "network_strength": "0.91",
     "shorturl": "http://vc4afri.ca/zp4j2",
     "address": "1 Rocket Rd, Hawthorne CA",
     "country": "United States",
@@ -429,7 +429,7 @@ GET /v1/ventures/18/team.json</pre>
 <li>sectors - an array of sectors the venture is engaged in.</li>
 <li>tags - an array of tags corresponding to the venture.</li>
 <li>fundStatus - the current fundraising status of the venture.</li>
-<li>network strength - a percentage value corresponding to the calculated network strength of the venture.</li>
+<li>network_strength - a decimal value corresponding to the calculated network strength of the venture.</li>
 <li>shorturl - the short URL which redirects to the full URI of the venture.</li>
 <li>address - the physical address for the venture's base of operations.</li>
 <li>country - the primary country where the venture is based.</li>
@@ -466,7 +466,7 @@ GET /v1/ventures/search.json?country=Ethiopia&status=r_fundraising</pre>
             "digital effects"
         }],
         "fundStatus": "Round Completed",
-        "network_strength": "74",
+        "network_strength": "0.74",
         "shorturl": "http://vc4afri.ca/cl8j4",
         "address": "Chad St, Addis Ababa",
         "country": "Ethiopia",
@@ -474,15 +474,20 @@ GET /v1/ventures/search.json?country=Ethiopia&status=r_fundraising</pre>
         "longitude": "38.732884"
         "followers": [{
             "userid": "60"
-        }, {
+            },
+            {
             "userid": "25"
-        }, {
+            },
+            {
             "userid": "1"
-        }, {
+            },
+            {
             "userid": "14"
-        }, {
+            },
+            {
             "userid": "71"
-        }, {
+            },
+            {
             "userid": "36"
         }]
     }],
