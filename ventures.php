@@ -45,6 +45,7 @@ Default record offset and limits apply.</p>
 <li>date_founded - the date the venture was founded.</li>
 <li>pitch - the corresponding pitch for the venture.</li>
 <li>tagline - the short description of the venture.</li>
+<li>logo_uri - the URI corresponding to the venture logo in JPEG format.</li>
 <li>website - the URI corresponding to the venture website.</li>
 <li>network_strength - a decimal value corresponding to the calculated network strength of the venture.</li>
 <li>shorturl - the short URL which redirects to the full URI of the venture.</li>
@@ -68,6 +69,7 @@ GET /v1/ventures.json?offset=0&limit=5</pre>
         "date_founded": "2014-03-01",
         "pitch": "We are a digitial photo/video processing service using the latest tiltshift technology.",
         "tagline": "Your world in miniature.",
+        "logo_uri": "https://s3.amazonaws.com/vc4africa/wblob/542197FD2D7132/cgHjjtolHDHza3-BxI-RTA/avatar.jpg",
         "website": "https://tiltshift.me",
         "network_strength": "0.74",
         "shorturl": "http://vc4afri.ca/cl8j4",
@@ -83,6 +85,7 @@ GET /v1/ventures.json?offset=0&limit=5</pre>
         "date_founded": "2012-12-05",
         "pitch": "We are a consumer Internet service for organizing and sharing great content.",
         "tagline": "Discover and share the best content.",
+        "logo_uri": "https://s3.amazonaws.com/vc4africa/wblob/542197FD2D7132/gnplmIktgODmX5XLWYeAew/avatar.jpg",
         "website": "https://pandawhale.co.ke",
         "network_strength": "0.81",
         "shorturl": "http://vc4afri.ca/7cqso",
@@ -98,6 +101,7 @@ GET /v1/ventures.json?offset=0&limit=5</pre>
         "date_founded": "2010-05-01",
         "pitch": "Discover which of your friends are voters and campaign with them to elect Pokemon.",
         "tagline": "Innovating the Pokemon election space.",
+        "logo_uri": "https://s3.amazonaws.com/vc4africa/wblob/542197FD2D7132/PlNf3lHDjnHz1m8lMMbVwQ/avatar.jpg",
         "website": "http://www.minomonsters.com/",
         "network_strength": "0.83",
         "shorturl": "http://vc4afri.ca/ogrgq",
@@ -113,6 +117,7 @@ GET /v1/ventures.json?offset=0&limit=5</pre>
         "date_founded": "2006-04-30",
         "pitch": "Maker of the finest widgets to simplify your modern life.",
         "tagline": "Widgets 'R' Us",
+        "logo_uri": "https://s3.amazonaws.com/vc4africa/wblob/542197FD2D7132/2akmj5tSx2Fxb1sGDPgm4Q/avatar.jpg",
         "website": "https://anvilstudio.co",
         "network_strength": "0.65",
         "shorturl": "http://vc4afri.ca/7xxmk",
@@ -128,6 +133,7 @@ GET /v1/ventures.json?offset=0&limit=5</pre>
         "date_founded": "2009-06-20",
         "pitch": "We are an aerospace manufacturer and space transport services company.",
         "tagline": "Design, manufacture and launche advanced spacecraft.",
+        "logo_uri": "https://s3.amazonaws.com/vc4africa/wblob/542197FD2D7132/A8Zqor1ajDp3OW1f0WQRFw/avatar.jpg",
         "website": "https://spacex.com",
         "network_strength": "0.91",
         "shorturl": "http://vc4afri.ca/zp4j2",
@@ -167,6 +173,7 @@ GET /v1/ventures.json?offset=0&limit=5</pre>
 <li>title - the corresponding title for the venture.</li>
 <li>pitch - the corresponding textual pitch for the venture.</li>
 <li>tagline - the short description of the venture.</li>
+<li>logo_uri - the URI corresponding to the venture logo in JPEG format.</li>
 <li>website - the URI corresponding to the venture website.</li>
 <li>video_pitch - the URI corresponding to the venture's video pitch (YouTube, Vimeo, etc.).</li>
 <li>date_created - the date/time the venture was created.</li>
@@ -214,6 +221,7 @@ GET /v1/ventures/18.json</pre>
     "title": "SpaceX",
     "pitch": "We are an aerospace manufacturer and space transport services company.",
     "tagline": "Design, manufacture and launche advanced spacecraft.",
+    "logo_uri": "https://s3.amazonaws.com/vc4africa/wblob/542197FD2D7132/A8Zqor1ajDp3OW1f0WQRFw/avatar.jpg",
     "website": "https://spacex.com",
     "video_pitch": "https://youtu.be/BhMSzC1crr0",
     "date_created": "2016-07-21 23:18:03",
