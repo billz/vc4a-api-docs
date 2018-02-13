@@ -178,7 +178,7 @@ GET /v1/ventures.json?offset=0&limit=5</pre>
 <li>video_pitch - the URI corresponding to the venture's video pitch (YouTube, Vimeo, etc.).</li>
 <li>date_created - the date/time the venture was created.</li>
 <li>date_founded - the date the venture was founded.</li>
-<li>tags - an array of tags associated with the venture.</li>
+<li><del>tags - an array of tags associated with the venture.</del> (Deprecated)</li>
 <li>fundStatus - the current fundraising status of the venture.</li>
 <li>address - the physical address for the venture's base of operations.</li>
 <li>country - the primary country where the venture is based.</li>
@@ -226,11 +226,6 @@ GET /v1/ventures/18.json</pre>
     "video_pitch": "https://youtu.be/BhMSzC1crr0",
     "date_created": "2016-07-21 23:18:03",
     "date_founded": "2002-03-01",
-    "tags": [{
-        "spaceships",
-        "rockets",
-        "mars"
-    }],
     "fundStatus": "Seeking Investor",
     "network_strength": "0.91",
     "shorturl": "http://vc4afri.ca/zp4j2",
@@ -415,7 +410,7 @@ GET /v1/ventures/18/team.json</pre>
 <li>name - the corresponding name of the venture.</li>
 <li>country - the country where the venture is located.</li>
 <li>sector - the primary sector the venture is engaged in.</li>
-<li>tag - a list of tags associated with the venture.</li>
+<li><del>tag - a list of tags associated with the venture.</del> (Deprecated)</li>
 <li>status - the current fundraising status of the venture.</li>
 </ul>
 <p><strong>Note</strong></p>
@@ -435,7 +430,7 @@ GET /v1/ventures/18/team.json</pre>
 <li>tagline - the short description of the venture.</li>
 <li>website - the URI corresponding to the venture website.</li>
 <li>sectors - an array of sectors the venture is engaged in.</li>
-<li>tags - an array of tags corresponding to the venture.</li>
+<li><del>tags - an array of tags corresponding to the venture.</del> (Deprecated)</li>
 <li>fundStatus - the current fundraising status of the venture.</li>
 <li>network_strength - a decimal value corresponding to the calculated network strength of the venture.</li>
 <li>shorturl - the short URL which redirects to the full URI of the venture.</li>
@@ -466,12 +461,6 @@ GET /v1/ventures/search.json?country=Ethiopia&status=r_fundraising</pre>
             "E-Commerce",
             "Internet",
             "Specialty Retail"
-        }],
-        "tags": [{
-            "photography",
-            "tiltshift",
-            "miniature",
-            "digital effects"
         }],
         "fundStatus": "Round Completed",
         "network_strength": "0.74",
