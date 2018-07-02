@@ -10,6 +10,7 @@
 
 <div id="apitoc"><ul>
 <li><a href="#v1_fundraising_info">/v1/fundraising</a></li>
+<li><a href="#v1_fundraising_stages">/v1/fundraising/stages</a></li>
 <li><a href="#v1_fundraising_search">/v1/fundraising/search</a></li>
 <!--li><a href="#v1_fundraising_ventures_id">/v1/fundraising/:venture_id</a></li-->
 </ul></div>
@@ -102,6 +103,50 @@ GET /v1/fundraising.json?status=r_fundraising&limit=5</pre>
 </pre>
 
 </div>
+
+<div class="apiendpoint" id="v1_fundraising_stages">
+
+<h2>/v1/fundraising/stages</h2>
+<p>Returns an array of compact objects, according to default record offset and limit.</p>
+<h3>Parameters</h3>
+<ul>
+<li>
+<p>None</p>
+</li>
+</ul>
+<h3>Return Values</h3>
+<ul>
+<li>stages - the values corresponding to venture financing stages.</li>
+</ul>
+<h3>Example Request</h3>
+<pre class="example">API Address: https://api.vc4a.com
+GET /v1/fundraising/stages.json</pre>
+
+<h3>Example Response</h3>
+<pre class="prettyprint lang-js">
+{
+  "stages": [{
+    "1st-round-series-a",
+    "2nd-round-working-cap",
+    "3rd-round-mezzanine",
+    "4th-round-bridge",
+    "founder-capital",
+    "seed",
+    "start-up",
+    "uncategorized"
+  }],
+  "_metadata": [{
+      "totalCount": 8
+    }]
+}
+  &quot;status_code&quot;: 200,
+  &quot;status_txt&quot;: &quot;OK&quot;
+}
+</pre>
+
+</div>
+
+
 
 <div class="apiendpoint" id="v1_fundraising_search">
 
