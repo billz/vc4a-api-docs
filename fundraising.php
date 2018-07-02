@@ -107,7 +107,7 @@ GET /v1/fundraising.json?status=r_fundraising&limit=5</pre>
 <div class="apiendpoint" id="v1_fundraising_stages">
 
 <h2>/v1/fundraising/stages</h2>
-<p>Returns an array of compact objects, according to default record offset and limit.</p>
+<p>Returns an array of compact objects.</p>
 <h3>Parameters</h3>
 <ul>
 <li>
