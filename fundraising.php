@@ -157,8 +157,9 @@ GET /v1/fundraising/stages.json</pre>
 <li>status - <b>(required)</b> a string value corresponding to the fundraising enumerated type.</li>
 <li>name - the corresponding name of the fundraising round.</li>
 <li>country - the country associated with the fundraising round.</li>
-<li>sector - the primary sector associated with the fundraising round.</li>
-<li><del>tag - a tags associated with the fundraising round.</del></li>
+<li>sector - the primary <a href="ventures.php#v1_ventures_sectors">sector</a> associated with the fundraising round.</li>
+<li>stage - the <a href="#v1_fundraising_stages">stage</a> associated with the fundraising round.</li>
+<li><del>tag - tags associated with the fundraising round.</del></li>
 
 </ul>
 <p><strong>Note</strong></p>
@@ -174,7 +175,7 @@ GET /v1/fundraising/stages.json</pre>
 <li>title - the corresponding title for the venture.</li>
 <li>date_created - the date the venture was created.
 <li>pitch - the summary pitch for the venture.</li>
-<li>capital - an array of objects representing the capitalization history, including financing stage, amount (USD) and closing date.</li>
+<li>capital - an array of objects representing the capitalization history, including financing stage, amount (USD) and date.</li>
 <li>network_strength - a decimal value corresponding to the calculated signal strength of the venture.</li>
 <li>shorturl - the corresponding short URL which redirects to the full URI of the venture.</li>
 <li>country - the primary  country where the venture is based.</li>
@@ -199,15 +200,15 @@ GET /v1/fundraising/search.json?status=r_completed&amp;sector=Education&amp;coun
         "capital": [{
           "stage": "Start-up",
           "amount": "2800",
-          "closing_date": "2018-03-26 00:00:00"
+          "date": "2018-03-26 00:00:00"
         },{
           "stage": "Founder capital",
           "amount": "20000",
-          "closing_date": "2018-01-19 00:00:00"
+          "date": "2018-01-19 00:00:00"
         },{
           "stage": "Founder capital",
           "amount": "1500",
-          "closing_date": "2017-03-19 00:00:00"
+          "date": "2017-03-19 00:00:00"
         }],
         "network_strength": "0.94",
         "shorturl": "http://vc4afri.ca/3w3",
@@ -223,7 +224,7 @@ GET /v1/fundraising/search.json?status=r_completed&amp;sector=Education&amp;coun
         "capital": [{
           "stage": "Founder capital",
           "amount": "270",
-          "closing_date": "2018-04-10 00:00:00"
+          "date": "2018-04-10 00:00:00"
         }],
         "network_strength": "0.81",
         "shorturl": "http://vc4afri.ca/377",
@@ -239,7 +240,7 @@ GET /v1/fundraising/search.json?status=r_completed&amp;sector=Education&amp;coun
         "capital": [{
           "stage": "Start-up",
           "amount": "1000",
-          "closing_date": "2018-01-15 00:00:00"
+          "date": "2018-01-15 00:00:00"
         }],
         "network_strength": "0.83",
         "shorturl": "http://vc4afri.ca/32r",
@@ -255,7 +256,7 @@ GET /v1/fundraising/search.json?status=r_completed&amp;sector=Education&amp;coun
         "capital": [{
           "stage": "Start-up",
           "amount": "127000",
-          "closing_date": "2018-03-30 00:00:00"
+          "date": "2018-03-30 00:00:00"
         }],
         "network_strength": "0.91",
         "shorturl": "http://vc4afri.ca/322",
@@ -271,11 +272,11 @@ GET /v1/fundraising/search.json?status=r_completed&amp;sector=Education&amp;coun
         "capital": [{
           "stage": "Seed",
           "amount": "5000",
-          "closing_date": "2017-11-21 00:00:00"
+          "date": "2017-11-21 00:00:00"
         },{
           "stage": "Founder capital",
           "amount": "3000",
-          "closing_date": "2016-12-30 00:00:00"
+          "date": "2016-12-30 00:00:00"
         }],
         "network_strength": "0.72",
         "shorturl": "http://vc4afri.ca/2gx",
