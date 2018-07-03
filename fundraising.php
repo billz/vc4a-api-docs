@@ -34,7 +34,7 @@
 <p><strong>Note</strong></p>
 <ul>
 <li>if the <code>status</code> parameter is not included, a 400 Error: 'Missing required parameters' will be returned.</li>
-<li>the <code>status</code> parameter accepts one of the following fundraising status values: <code>r_fundraising</code>, <code>r_dealmaking</code>, <code>r_completed</code>, <code>r_pending</code>, or <code>r_closed</code>.</li>
+<li>the <code>status</code> parameter accepts one of the following fundraising status values: <code>r_fundraising</code>, <code>r_completed</code>, or <code>r_pending</code>.</li>
 <li><code>limit</code> is optional (defaults to 20).</li>
 <li><code>offset</code> is optional (defaults to 0).</li>
 <li>VC4A API key authorization required.</li>
@@ -154,15 +154,17 @@ GET /v1/fundraising/stages.json</pre>
 <p>Queries fundraising rounds by name, country, sector, tag, fundraising status or ID. Returns an array of compact venture objects with associated financial details.</p>
 <h3>Parameters</h3>
 <ul>
+<li>status - <b>(required)</b> a string value corresponding to the fundraising enumerated type.</li>
 <li>name - the corresponding name of the fundraising round.</li>
 <li>country - the country associated with the fundraising round.</li>
 <li>sector - the primary sector associated with the fundraising round.</li>
-<li>tag - a tags associated with the fundraising round.</li>
-<li>status - the type of fundraising round.</li>
+<li><del>tag - a tags associated with the fundraising round.</del></li>
+
 </ul>
 <p><strong>Note</strong></p>
 <ul>
-<li><code>status</code> is a required parameter.</li>
+<li>if the <code>status</code> parameter is not included, a 400 Error: 'Missing required parameters' will be returned.</li>
+<li>the <code>status</code> parameter accepts one of the following fundraising status values: <code>r_fundraising</code>, <code>r_completed</code>, or <code>r_pending</code>.</li>
 <li>VC4A API key authorization required.</li>
 </ul>
 <h3>Return Values</h3>
@@ -170,11 +172,12 @@ GET /v1/fundraising/stages.json</pre>
 <li>id - the unique vc4a identifier for the fundraising venture.</li>
 <li>ownerid - the unique identifier for the fundraising round owner.</li>
 <li>title - the corresponding title for the venture.</li>
+<li>date_created - the date the venture was created.
 <li>pitch - the summary pitch for the venture.</li>
-<li>capital - the amount of capital in USD for the round.</li>
+<li>capital - an array of objects representing the capitalization history, including financing stage, amount (USD) and closing date.</li>
 <li>network_strength - a decimal value corresponding to the calculated signal strength of the venture.</li>
 <li>shorturl - the corresponding short URL which redirects to the full URI of the venture.</li>
-<li>country - the primary country where the venture is based.</li>
+<li>country - the primary  country where the venture is based.</li>
 <li>latitude - the north-south distance from the equator, expressed in degrees and minutes.</li>
 <li>longitude - the east-west distance from the meridian, expressed in degrees and minutes.</li>
 <li>metadata - <code>offset</code>, <code>limit</code> and <code>totalCount</code>.</li>
@@ -182,71 +185,108 @@ GET /v1/fundraising/stages.json</pre>
 </ul>
 <h3>Example Request</h3>
 <pre class="example">API Address: https://api.vc4a.com
-GET /v1/fundraising/search.json?status=r_completed&limit=5</pre>
+GET /v1/fundraising/search.json?status=r_completed&amp;sector=Education&amp;country=Nigeria&amp;limit=5</pre>
 
 <h3>Example Response</h3>
 <pre class="prettyprint lang-js">
 {
-    "fundraising": [{
-        "id": "40572",
-        "ownerid": "21615",
-        "title": "SaharaBranded",
-        "date_created": "2015-03-11 14:22:54",
-        "pitch": "Review, select and buy a wide variety of artisanal crafts made in the Sahara.",
-        "capital": "20000",
+    "ventures": [{
+        "id": "102793",
+        "ownerid": "29933",
+        "title": "Verilearn",
+        "date_created": "2018-03-11 14:22:54",
+        "pitch": "We improve students’ learning and knowledge retention.",
+        "capital": [{
+          "stage": "Start-up",
+          "amount": "2800",
+          "closing_date": "2018-03-26 00:00:00"
+        },{
+          "stage": "Founder capital",
+          "amount": "20000",
+          "closing_date": "2018-01-19 00:00:00"
+        },{
+          "stage": "Founder capital",
+          "amount": "1500",
+          "closing_date": "2017-03-19 00:00:00"
+        }],
         "network_strength": "0.94",
-        "shorturl": "http://vc4afri.ca/cl1j4",
-        "country": "Mali",
-        "latitude": "4.287556427760489",
-        "longitude": "10.689018062500054"
-    }, {
-        "id": "36030",
-        "ownerid": "16521",
-        "title": "OrinokoPay",
-        "date_created": "2015-11-26 18:39:09",
-        "pitch": "Reliable mobile card payment services that work anywhere.",
-        "capital": "450000",
-        "network_strength": "0.81",
-        "shorturl": "http://vc4afri.ca/5cqso",
+        "shorturl": "http://vc4afri.ca/3w3",
         "country": "Nigeria",
-        "latitude": "-13.667338259654947",
-        "longitude": "28.6962890625"
+        "latitude": "6.4561564",
+        "longitude": "3.437744699"
     }, {
-        "id": "35182",
-        "ownerid": "6778",
-        "title": "Democratize",
-        "date_created": "2015-04-13 10:25:49",
-        "pitch": "Discover which of your friends are voters and campaign with them.",
-        "capital": "600000",
+        "id": "100147",
+        "ownerid": "71986",
+        "title": "Geek Code Planet",
+        "date_created": "2018-04-10 22:33:07",
+        "pitch": "Kids learn concepts in different coding platforms and get to make real life projects.",
+        "capital": [{
+          "stage": "Founder capital",
+          "amount": "270",
+          "closing_date": "2018-04-10 00:00:00"
+        }],
+        "network_strength": "0.81",
+        "shorturl": "http://vc4afri.ca/377",
+        "country": "Nigeria",
+        "latitude": "9.1089348",
+        "longitude": "7.4110988"
+    }, {
+        "id": "99344",
+        "ownerid": "73456",
+        "title": "Traindemy Limited",
+        "date_created": "2018-04-03 13:04:02",
+        "pitch": "Online learning platform where people can acquire vocational skills and talent coaching.",
+        "capital": [{
+          "stage": "Start-up",
+          "amount": "1000",
+          "closing_date": "2018-01-15 00:00:00"
+        }],
         "network_strength": "0.83",
-        "shorturl": "http://vc4afri.ca/oergq",
-        "country": "Cameroon",
-        "latitude": "5.2509943447956795",
-        "longitude": "12.007377437500054"
+        "shorturl": "http://vc4afri.ca/32r",
+        "country": "Nigeria",
+        "latitude": "6.4369911",
+        "longitude": "3.4883181"
     }, {
-        "id": "35924",
-        "ownerid": "15911",
-        "title": "Sustainable Energy",
-        "date_created": "2015-7-12 15:43:03",
-        "pitch": "We aim to end kerosene consumption in Africa. Our patented ethanol gel stoves are safe and clean.",
-        "capital": "250000",
+        "id": "99242",
+        "ownerid": "73225",
+        "title": "Tembo Education",
+        "date_created": "2018-03-30 17:11:57",
+        "pitch": "Tembo sends one education activity per day, to parents, via text messages.",
+        "capital": [{
+          "stage": "Start-up",
+          "amount": "127000",
+          "closing_date": "2018-03-30 00:00:00"
+        }],
         "network_strength": "0.91",
-        "shorturl": "http://vc4afri.ca/7gxmk",
-        "country": "Kenya",
-        "latitude": "4.199906782278597",
-        "longitude": "11.216361812500054"
+        "shorturl": "http://vc4afri.ca/322",
+        "country": "Nigeria",
+        "latitude": "6.535233",
+        "longitude": "3.3489671"
     }, {
-        "id": "35761",
-        "ownerid": "22798",
-        "title": "StudentPrep",
-        "date_created": "2015-09-08 21:52:40",
-        "pitch": "An e-learning platform that helps students succeed in school.",
-        "capital": "75000",
+        "id": "96227",
+        "ownerid": "69336",
+        "title": "Tertary Nigeria",
+        "date_created": "2018-02-21 12:10:20",
+        "pitch": "We help univerity students secure internship positions to build their practical skills.",
+        "capital": [{
+          "stage": "Seed",
+          "amount": "5000",
+          "closing_date": "2017-11-21 00:00:00"
+        },{
+          "stage": "Founder capital",
+          "amount": "3000",
+          "closing_date": "2016-12-30 00:00:00"
+        }],
         "network_strength": "0.72",
-        "shorturl": "http://vc4afri.ca/5dqg5",
-        "country": "Cape Verde",
-        "latitude": "15.210222837556922",
-        "longitude": "-23.88184306249991"
+        "shorturl": "http://vc4afri.ca/2gx",
+        "country": "Nigeria",
+        "latitude": "6.4979884",
+        "longitude": "3.3439291"
+    }]
+    "_metadata": [{
+      "offset": "0",
+      "limit": "5",
+      "totalCount": 5
     }]
 },
   &quot;status_code&quot;: 200,
