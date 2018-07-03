@@ -15,6 +15,7 @@
 <li><a href="#v1_ventures_team">/v1/ventures/:venture_id/team</a></li>
 <li><a href="#v1_ventures_search">/v1/ventures/search</a></li>
 <li><a href="#v1_ventures_countries">/v1/ventures/countries</a></li>
+<li><a href="#v1_ventures_sectors">/v1/ventures/sectors</a></li>
 </ul></div>
 
 <div class="apiendpoint" id="v1_ventures">
@@ -546,6 +547,66 @@ GET /v1/ventures/countries.json</pre>
     }]
 }</pre>
 </div>
+
+<div class="apiendpoint" id="v1_ventures_sectors">
+
+<h2>/v1/ventures/sectors</h2>
+<p>Returns an array of business sectors.</p>
+<h3>Parameters</h3>
+<ul>
+<li>None.</li>
+    
+</ul>
+<p><strong>Note</strong></p>
+<ul>
+<li>The sector value may be used as a parameter for searching fundraising rounds. Refer to <a href="fundraising.php#v1_fundraising_search">/v1/fundraising/search</a>.</li>
+</ul>
+
+<h3>Return Values</h3>
+<ul>
+<li>sectors - an array of string values corresponding to venture sector names, in alpha ascending order.</li>
+<li>metadata - <code>totalCount</code>.</li>
+</ul>
+
+<h3>Example Request:</h3>
+<pre class="example">API Address: https://api.vc4a.com
+GET /v1/ventures/sectors.json</pre>
+
+<h3>Example Response:</h3>
+<pre class="prettyprint lang-js">{
+    "sectors": [{
+        "3D printing",
+        "Accounting services",
+        "Adtech",
+        "Agribusiness",
+        "Agrichemicals",
+        "Agritech",
+        "Animal farming",
+        "Animation",
+        "Artificial intelligence",
+        "Arts",
+        "Automotive",
+        "Banking",
+        "Big data",
+        "Biofuels",
+        "Biomass",
+        "Biotechnology and medical research",
+        "Blockchain",
+        "Business services",
+        "Cars",
+        "Clean technology",
+        "Clean technology and energy",
+        ...
+        }]
+    }],
+    "_metadata": [{
+        "totalCount": 123
+    }]
+}</pre>
+</div>
+
+
+
 </div>
 
 
