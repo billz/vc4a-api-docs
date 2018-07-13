@@ -11,8 +11,8 @@
 <div id="apitoc"><ul>
 <li><a href="#v1_fundraising_info">/v1/fundraising</a></li>
 <li><a href="#v1_fundraising_stages">/v1/fundraising/stages</a></li>
+<li><a href="#v2_fundraising_search">/v2/fundraising/search</a></li>
 <li><a href="#v1_fundraising_search">/v1/fundraising/search</a></li>
-<!--li><a href="#v1_fundraising_ventures_id">/v1/fundraising/:venture_id</a></li-->
 </ul></div>
 
 <div class="apiendpoint" id="v1_fundraising_info">
@@ -143,15 +143,127 @@ GET /v1/fundraising/stages.json</pre>
   &quot;status_txt&quot;: &quot;OK&quot;
 }
 </pre>
-
 </div>
 
+
+<div class="apiendpoint" id="v2_fundraising_search">
+
+<h2>/v2/fundraising/search</h2>
+<p>Queries fundraising rounds by status, financing stage, country and/or sector. Returns an array of compact venture objects with associated financial details.
+This new <code>/v2</code> method is extremely useful for retrieving financing stage details and analyzing countrywide or regional venture finance trends.
+Please note that this public method does not return data such as <code>ventureID</code>, <code>ownerID</code>, <code>title</code>, <code>pitch</code> or <code>shortURL</code>.</p>
+<h3>Parameters</h3>
+<ul>
+<li>status - <b>(required)</b> a string value corresponding to the fundraising enumerated type.</li>
+<li>country - the <a href="ventures.php#v1_ventures_countries">country</a> associated with the fundraising round.</li>
+<li>sector - the primary <a href="ventures.php#v1_ventures_sectors">sector</a> associated with the fundraising round.</li>
+<li>stage - the <a href="#v1_fundraising_stages">stage</a> associated with the fundraising round.</li>
+
+</ul>
+<p><strong>Note</strong></p>
+<ul>
+<li>if the <code>status</code> parameter is not included, a 400 Error: 'Missing required parameters' will be returned.</li>
+<li>the <code>status</code> parameter accepts one of the following fundraising status values: <code>r_fundraising</code>, <code>r_completed</code>, or <code>r_pending</code>.</li>
+</ul>
+<h3>Return Values</h3>
+<ul>
+<li>date_created - the date the venture was created.
+<li>capital - an array of objects representing the capitalization history, including financing stage, amount (USD) and date.</li>
+<li>network_strength - a decimal value corresponding to the calculated signal strength of the venture.</li>
+<li>country - the primary  country where the venture is based.</li>
+<li>latitude - the north-south distance from the equator, expressed in degrees and minutes.</li>
+<li>longitude - the east-west distance from the meridian, expressed in degrees and minutes.</li>
+<li>metadata - <code>offset</code>, <code>limit</code> and <code>totalCount</code>.</li>
+</ul>
+</ul>
+<h3>Example Request</h3>
+<pre class="example">API Address: https://api.vc4a.com
+GET /v2/fundraising/search.json?status=r_completed&amp;sector=Artificial%20intelligence&amp;country=South%20Africa&amp;limit=5</pre>
+
+<h3>Example Response</h3>
+<pre class="prettyprint lang-js">
+{
+    "ventures": [{
+        "date_created": "2018-06-06 20:14:18",
+        "capital": [{
+          "stage": "Start-up",
+          "amount": "65000",
+          "date": "2018-06-06 23:39:17"
+        },{
+          "stage": "Founder capital",
+          "amount": "10000",
+          "date": "218-06-06 23:39:15"
+        }],
+        "network_strength": "0.91",
+        "country": "South Africa",
+        "latitude": "-27.8009097",
+        "longitude": "28.4318311"
+    }, {
+        "date_created": "2018-05-30 22:05:54",
+        "capital": [{
+          "stage": "Founder capital",
+          "amount": "120000",
+          "date": "2017-08-19 00:00:00"
+        }],
+        "network_strength": "0.93",
+        "country": "South Africa",
+        "latitude": "-26.03929"",
+        "longitude": "28.02263"
+    }, {
+        "date_created": "2018-05-29 13:19:31",
+        "capital": [{
+          "stage": "Start-up",
+          "amount": "135000",
+          "date": "2018-05-29 00:00:00"
+        }],
+        "network_strength": "0.83",
+        "country": "South Africa",
+        "latitude": "-33.8880429",
+        "longitude": "18.5136667""
+    }, {
+        "date_created": "2018-05-14 17:06:13",
+        "capital": [{
+          "stage": "Founder capital",
+          "amount": "55000",
+          "date": "2018-05-15 00:00:00"
+        }],
+        "network_strength": "0.89",
+        "country": "South Africa",
+        "latitude": "-26.04257",
+        "longitude": "28.01687"
+    }, {
+        "date_created": "2018-05-01 16:11:17",
+        "capital": [{
+          "stage": "2nd round (Working cap)",
+          "amount": "250000",
+          "date": "2018-05-01 16:21:59"
+        },{
+          "stage": "1st round (Series A)",
+          "amount": "75000",
+          "date": "2017-04-25 00:00:00"
+        }],
+        "network_strength": "0.72",
+        "country": "South Africa",
+        "latitude": "-26.0187136",
+        "longitude": "28.0025415"
+    }]
+    "_metadata": [{
+      "offset": "0",
+      "limit": "5",
+      "totalCount": 5
+    }]
+},
+  &quot;status_code&quot;: 200,
+  &quot;status_txt&quot;: &quot;OK&quot;
+}
+</pre>
+</div>
 
 
 <div class="apiendpoint" id="v1_fundraising_search">
 
 <h2>/v1/fundraising/search</h2>
-<p>Queries fundraising rounds by name, country, sector, tag, fundraising status or ID. Returns an array of compact venture objects with associated financial details.</p>
+<p>Queries fundraising rounds by status, venture name, financing stage, country and/or sector. Returns an array of detailed venture objects with associated financial details.</p>
 <h3>Parameters</h3>
 <ul>
 <li>status - <b>(required)</b> a string value corresponding to the fundraising enumerated type.</li>
