@@ -11,7 +11,7 @@
 <div id="apitoc"><ul>
 <li><a href="#v1_fundraising_info">/v1/fundraising</a></li>
 <li><a href="#v1_fundraising_stages">/v1/fundraising/stages</a></li>
-<li><a href="#v2_fundraising_search">/v2/fundraising/search</a></li>
+<li><a href="#v1_fundraising_trends">/v1/fundraising/trends</a></li>
 <li><a href="#v1_fundraising_search">/v1/fundraising/search</a></li>
 </ul></div>
 
@@ -146,11 +146,11 @@ GET /v1/fundraising/stages.json</pre>
 </div>
 
 
-<div class="apiendpoint" id="v2_fundraising_search">
+<div class="apiendpoint" id="v1_fundraising_trends">
 
-<h2>/v2/fundraising/search</h2>
+<h2>/v1/fundraising/trends</h2>
 <p>Queries fundraising rounds by status, financing stage, country and/or sector. Returns an array of compact venture objects with associated financial details.
-This new <code>/v2</code> method is extremely useful for retrieving financing stage details and analyzing countrywide or regional venture finance trends.
+This method is extremely useful for retrieving financing stage details and analyzing countrywide or regional venture finance trends.
 Please note that this public method does not return data such as <code>ventureID</code>, <code>ownerID</code>, <code>title</code>, <code>pitch</code> or <code>shortURL</code>.</p>
 <h3>Parameters</h3>
 <ul>
@@ -178,7 +178,7 @@ Please note that this public method does not return data such as <code>ventureID
 </ul>
 <h3>Example Request</h3>
 <pre class="example">API Address: https://api.vc4a.com
-GET /v2/fundraising/search.json?status=r_completed&amp;sector=Artificial%20intelligence&amp;country=South%20Africa&amp;limit=5</pre>
+GET /v1/fundraising/trends.json?status=r_completed&amp;sector=Artificial%20intelligence&amp;country=South%20Africa&amp;limit=5</pre>
 
 <h3>Example Response</h3>
 <pre class="prettyprint lang-js">
