@@ -5,7 +5,7 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <link rel="stylesheet" href="static/style.css" type="text/css" charset="utf-8" />
     <link rel="stylesheet" href="static/prettify.css" type="text/css" charset="utf-8" />
-    <link rel="shortcut icon" href="http://vc4a.com/wp-content/themes/vc4africa/favicon.ico" />
+    <link rel="shortcut icon" href="static/images/favicon.ico" />
 </head>
 <body  id="interior">
  <div id="nav">
